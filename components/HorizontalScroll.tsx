@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const businessUnits = [
   { 
@@ -112,9 +113,12 @@ const HorizontalScroll: React.FC = () => {
                    </p>
                  </div>
 
-                 <button className="mt-8 w-max px-8 py-3 bg-white text-brand-navy font-bold rounded transition-all duration-300 shadow-lg hover:bg-brand-teal hover:text-brand-navy group-hover:shadow-brand-teal/20">
+                 <Link
+                   to={`/${unit.id}`}
+                   className="mt-8 inline-block w-max px-8 py-3 bg-white text-brand-navy font-bold rounded transition-all duration-300 shadow-lg hover:bg-brand-teal hover:text-brand-navy group-hover:shadow-brand-teal/20"
+                 >
                    Mehr erfahren
-                 </button>
+                 </Link>
               </div>
             </div>
           ))}

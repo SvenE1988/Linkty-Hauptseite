@@ -13,45 +13,33 @@ const ImpressumPage: React.FC = () => {
             Angaben gemäß § 5 TMG
           </h2>
           <p className="text-gray-700 mb-4">
-            [Firmenname]<br />
-            [Straße und Hausnummer]<br />
-            [PLZ und Ort]
+            Linkty Engage<br />
+            Eine Marke der Erkens Holding GmbH<br />
+            Haubenkopfstr. 12<br />
+            76189 Karlsruhe
           </p>
 
           <h2 className="text-2xl font-bold text-engage-primary mt-8 mb-4">Kontakt</h2>
           <p className="text-gray-700 mb-4">
-            Telefon: [Telefonnummer]<br />
-            E-Mail: [E-Mail-Adresse]
+            Telefon: <a href="tel:+4972195279401" className="text-engage-accent hover:underline">+49 721 95279401</a><br />
+            E-Mail: <a href="mailto:info@linkty.de" className="text-engage-accent hover:underline">info@linkty.de</a>
           </p>
 
           <h2 className="text-2xl font-bold text-engage-primary mt-8 mb-4">
-            Vertreten durch
-          </h2>
-          <p className="text-gray-700 mb-4">[Name des Geschäftsführers]</p>
-
-          <h2 className="text-2xl font-bold text-engage-primary mt-8 mb-4">
-            Registereintrag
+            Vertretungsberechtigte
           </h2>
           <p className="text-gray-700 mb-4">
-            Eintragung im Handelsregister<br />
-            Registergericht: [Registergericht]<br />
-            Registernummer: [Registernummer]
-          </p>
-
-          <h2 className="text-2xl font-bold text-engage-primary mt-8 mb-4">
-            Umsatzsteuer-ID
-          </h2>
-          <p className="text-gray-700 mb-4">
-            Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
-            [USt-IdNr.]
+            Sven Erkens<br />
+            Emir Corbo
           </p>
 
           <h2 className="text-2xl font-bold text-engage-primary mt-8 mb-4">
             Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
           </h2>
           <p className="text-gray-700 mb-4">
-            [Name]<br />
-            [Adresse]
+            Sven Erkens und Emir Corbo<br />
+            Haubenkopfstr. 12<br />
+            76189 Karlsruhe
           </p>
         </div>
       </div>
