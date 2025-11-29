@@ -37,7 +37,7 @@ const EngageHeader: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           <Link to="/engage" className="flex items-center space-x-2">
             <img
-              src="https://storage.googleapis.com/msgsndr/Av3P0jZ2jSTK0YnBojKR/media/6929959d6a32b2f3f4974322.png"
+              src="https://storage.googleapis.com/msgsndr/Av3P0jZ2jSTK0YnBojKR/media/692a888e83db21530b468bdb.png"
               alt="Linkty Engage"
               className="h-10"
             />

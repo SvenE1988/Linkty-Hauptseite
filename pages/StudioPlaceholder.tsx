@@ -36,7 +36,7 @@ const StudioPlaceholder: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
             <Link to="/" className="flex items-center gap-3">
               <img
-                src="https://storage.googleapis.com/msgsndr/Av3P0jZ2jSTK0YnBojKR/media/6929959d7f38c94083e42664.png"
+                src="https://storage.googleapis.com/msgsndr/Av3P0jZ2jSTK0YnBojKR/media/692a88bf313bfdca12ec1cd2.png"
                 alt="Linkty Studio"
                 className="h-10"
               />

@@ -36,7 +36,7 @@ const VoicePlaceholder: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
             <Link to="/" className="flex items-center gap-3">
               <img
-                src="https://storage.googleapis.com/msgsndr/Av3P0jZ2jSTK0YnBojKR/media/6929959d6a32b2f288974321.png"
+                src="https://storage.googleapis.com/msgsndr/Av3P0jZ2jSTK0YnBojKR/media/692a88bf1f60a17cede8d00c.png"
                 alt="Linkty Voice"
                 className="h-10"
               />

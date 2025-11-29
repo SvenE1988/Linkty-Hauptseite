@@ -95,7 +95,7 @@ const EngageFooter: React.FC = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <Link to="/engage" className="mb-4 md:mb-0">
               <img
-                src="https://storage.googleapis.com/msgsndr/Av3P0jZ2jSTK0YnBojKR/media/6929959d6a32b2f3f4974322.png"
+                src="https://storage.googleapis.com/msgsndr/Av3P0jZ2jSTK0YnBojKR/media/692a888e83db21530b468bdb.png"
                 alt="Linkty Engage"
                 className="h-10"
               />
