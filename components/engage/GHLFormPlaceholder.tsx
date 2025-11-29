@@ -1,5 +1,21 @@
 import React from 'react';
 
+/**
+ * GHL Form Placeholder Component
+ *
+ * TODO: Insert GoHighLevel Form Embed Script
+ *
+ * Instructions:
+ * 1. Go to your GoHighLevel account
+ * 2. Navigate to Sites > Forms
+ * 3. Select or create your contact form
+ * 4. Click "Get Code" to copy the embed script
+ * 5. Replace this entire placeholder div with the GHL embed code
+ * 6. The className "ghl-embed-placeholder" can be used for custom styling
+ *
+ * Note: This placeholder shows the expected form structure. Once GHL script
+ * is added, remove all the disabled form fields below and use the GHL widget.
+ */
 const GHLFormPlaceholder: React.FC = () => {
   return (
     <div className="ghl-embed-placeholder bg-white p-8 rounded-xl shadow-lg border-2 border-dashed border-engage-teal/30">

@@ -1,7 +1,10 @@
 import React from 'react';
+import { usePageTitle } from '../../hooks/usePageTitle';
 import { MessageSquare, Mail, Phone, Inbox } from 'lucide-react';
 
 const KommunikationPage: React.FC = () => {
+  usePageTitle('Kommunikation - Linkty | Engage');
+
   return (
     <div>
       <section className="py-20 bg-gradient-to-br from-engage-teal to-engage-secondary text-white">

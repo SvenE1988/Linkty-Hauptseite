@@ -1,4 +1,5 @@
 import React from 'react';
+import { usePageTitle } from '../../hooks/usePageTitle';
 import { Users, Calendar, Target, BarChart3 } from 'lucide-react';
 
 const features = [
@@ -25,6 +26,8 @@ const features = [
 ];
 
 const CRMPage: React.FC = () => {
+  usePageTitle('CRM - Linkty | Engage');
+
   return (
     <div>
       <section className="py-20 bg-gradient-to-br from-engage-primary to-engage-secondary text-white">

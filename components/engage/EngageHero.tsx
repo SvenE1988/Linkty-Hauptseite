@@ -62,10 +62,12 @@ const EngageHero: React.FC = () => {
 
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
+              {/* TODO: Replace with Cloudinary/Supabase URL */}
               <img
                 src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
                 alt="CRM Dashboard"
                 className="w-full h-auto"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-engage-primary/20 to-transparent" />
             </div>

@@ -1,7 +1,10 @@
 import React from 'react';
+import { usePageTitle } from '../../hooks/usePageTitle';
 import { Phone, Clock, MessageSquare, Zap } from 'lucide-react';
 
 const VoicePage: React.FC = () => {
+  usePageTitle('Linkty Voice - KI-Telefonie | Engage');
+
   return (
     <div>
       <section className="py-20 bg-gradient-to-br from-engage-teal to-engage-primary text-white">

@@ -1,6 +1,23 @@
 import React from 'react';
 import { Calendar } from 'lucide-react';
 
+/**
+ * GHL Calendar Placeholder Component
+ *
+ * TODO: Insert GoHighLevel Calendar Widget Script
+ *
+ * Instructions:
+ * 1. Go to your GoHighLevel account
+ * 2. Navigate to Calendars
+ * 3. Select or create your booking calendar
+ * 4. Click "Get Embed Code" to copy the calendar widget script
+ * 5. Replace the placeholder div (lines 24-26) with the GHL calendar iframe
+ * 6. Typical GHL calendar code looks like:
+ *    <iframe src="https://api.leadconnectorhq.com/widget/booking/..." />
+ *
+ * Note: Keep the outer styling wrapper but replace the inner placeholder
+ * with the actual GHL calendar embed code.
+ */
 const GHLCalendarPlaceholder: React.FC = () => {
   return (
     <div className="ghl-calendar-placeholder bg-gradient-to-br from-engage-primary to-engage-secondary p-12 rounded-xl shadow-xl text-center">

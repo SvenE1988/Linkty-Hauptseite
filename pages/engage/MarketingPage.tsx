@@ -1,6 +1,9 @@
 import React from 'react';
+import { usePageTitle } from '../../hooks/usePageTitle';
 
 const MarketingPage: React.FC = () => {
+  usePageTitle('Marketing - Linkty | Engage');
+
   return (
     <div>
       <section className="py-20 bg-gradient-to-br from-engage-accent to-engage-secondary text-white">

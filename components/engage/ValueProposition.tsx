@@ -8,6 +8,7 @@ const sections = [
     description:
       'Traditionelle MVPs verwalten nur Akten. Geburtstage, Vertragsenden und Cross-Selling-Potenziale bleiben ungenutzt. Ihr wertvollster Bestand schläft.',
     icon: AlertCircle,
+    // TODO: Replace with Cloudinary/Supabase URL
     image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop',
     reverse: false,
   },
@@ -17,6 +18,7 @@ const sections = [
     description:
       'Linkty Engage aktiviert Ihren Bestand. Automatische Geburtstagskampagnen, Jahrescheck-Erinnerungen, Bedarfsanalysen – ohne dass Sie manuell eingreifen müssen.',
     icon: Zap,
+    // TODO: Replace with Cloudinary/Supabase URL
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop',
     reverse: true,
   },
@@ -26,6 +28,7 @@ const sections = [
     description:
       'Wenn Ihre Software aktiv für Sie arbeitet, haben Sie endlich Zeit für das Wesentliche: Beratungsgespräche und Abschlüsse. Ihre Kunden fühlen sich betreut, Ihr Team wird entlastet.',
     icon: TrendingUp,
+    // TODO: Replace with Cloudinary/Supabase URL
     image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=2070&auto=format&fit=crop',
     reverse: false,
   },
@@ -70,6 +73,7 @@ const ValueProposition: React.FC = () => {
                       src={section.image}
                       alt={section.title}
                       className="w-full h-auto rounded-lg"
+                      loading="lazy"
                     />
                   </div>
                 </div>
