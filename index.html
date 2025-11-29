@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Linkty | Verbinden. Automatisieren. Wachsen.</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
+              playfair: ['Playfair Display', 'serif'],
             },
             colors: {
               brand: {
@@ -19,6 +20,13 @@
                 blue: '#3B82F6', // Corporate Blue
                 navy: '#0F172A', // Deep Slate/Navy background
                 surface: '#1E293B', // Slightly lighter navy for cards
+              },
+              engage: {
+                primary: '#023059', // Deep Blue
+                secondary: '#3973bf', // Medium Blue
+                teal: '#76d9bd', // Turquoise
+                accent: '#FFB703', // Gold
+                surface: '#F8F9FB', // Off-white
               }
             },
             backgroundImage: {
