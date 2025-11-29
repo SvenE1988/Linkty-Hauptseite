@@ -53,6 +53,14 @@ const Footer: React.FC = () => {
           >
              Portfolio ansehen
           </Link>
+          <a
+            href="https://login.linkty.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-10 py-4 border-2 border-white/20 text-white font-bold rounded hover:bg-white/10 transition-all"
+          >
+             Portalzugang
+          </a>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 text-sm font-semibold tracking-wide border-t border-white/10 pt-10">

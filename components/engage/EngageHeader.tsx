@@ -6,23 +6,49 @@ const EngageHeader: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [softwareDropdownOpen, setSoftwareDropdownOpen] = useState(false);
   const [kiDropdownOpen, setKiDropdownOpen] = useState(false);
+  const softwareTimeoutRef = React.useRef<NodeJS.Timeout | null>(null);
+  const kiTimeoutRef = React.useRef<NodeJS.Timeout | null>(null);
+
+  const handleSoftwareMouseEnter = () => {
+    if (softwareTimeoutRef.current) clearTimeout(softwareTimeoutRef.current);
+    setSoftwareDropdownOpen(true);
+  };
+
+  const handleSoftwareMouseLeave = () => {
+    softwareTimeoutRef.current = setTimeout(() => {
+      setSoftwareDropdownOpen(false);
+    }, 200);
+  };
+
+  const handleKiMouseEnter = () => {
+    if (kiTimeoutRef.current) clearTimeout(kiTimeoutRef.current);
+    setKiDropdownOpen(true);
+  };
+
+  const handleKiMouseLeave = () => {
+    kiTimeoutRef.current = setTimeout(() => {
+      setKiDropdownOpen(false);
+    }, 200);
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link to="/engage" className="flex items-center space-x-2">
-            <div className="text-2xl font-bold text-engage-primary">
-              Linkty <span className="text-engage-accent">|</span> <span className="font-semibold">Engage</span>
-            </div>
+            <img
+              src="https://storage.googleapis.com/msgsndr/Av3P0jZ2jSTK0YnBojKR/media/6929959d6a32b2f3f4974322.png"
+              alt="Linkty Engage"
+              className="h-10"
+            />
           </Link>
 
           <nav className="hidden md:flex items-center space-x-8">
             <div className="relative group">
               <button
                 className="flex items-center space-x-1 text-gray-700 hover:text-engage-primary transition-colors"
-                onMouseEnter={() => setSoftwareDropdownOpen(true)}
-                onMouseLeave={() => setSoftwareDropdownOpen(false)}
+                onMouseEnter={handleSoftwareMouseEnter}
+                onMouseLeave={handleSoftwareMouseLeave}
               >
                 <span className="font-medium">Software</span>
                 <ChevronDown className="w-4 h-4" />
@@ -30,8 +56,8 @@ const EngageHeader: React.FC = () => {
               {softwareDropdownOpen && (
                 <div
                   className="absolute top-full left-0 mt-2 w-56 bg-white border border-gray-200 rounded-lg shadow-lg py-2"
-                  onMouseEnter={() => setSoftwareDropdownOpen(true)}
-                  onMouseLeave={() => setSoftwareDropdownOpen(false)}
+                  onMouseEnter={handleSoftwareMouseEnter}
+                  onMouseLeave={handleSoftwareMouseLeave}
                 >
                   <Link to="/engage/crm" className="block px-4 py-2 text-sm text-gray-700 hover:bg-engage-surface transition-colors">
                     CRM
@@ -52,8 +78,8 @@ const EngageHeader: React.FC = () => {
             <div className="relative group">
               <button
                 className="flex items-center space-x-1 text-gray-700 hover:text-engage-primary transition-colors"
-                onMouseEnter={() => setKiDropdownOpen(true)}
-                onMouseLeave={() => setKiDropdownOpen(false)}
+                onMouseEnter={handleKiMouseEnter}
+                onMouseLeave={handleKiMouseLeave}
               >
                 <span className="font-medium">KI & Automation</span>
                 <ChevronDown className="w-4 h-4" />
@@ -61,8 +87,8 @@ const EngageHeader: React.FC = () => {
               {kiDropdownOpen && (
                 <div
                   className="absolute top-full left-0 mt-2 w-56 bg-white border border-gray-200 rounded-lg shadow-lg py-2"
-                  onMouseEnter={() => setKiDropdownOpen(true)}
-                  onMouseLeave={() => setKiDropdownOpen(false)}
+                  onMouseEnter={handleKiMouseEnter}
+                  onMouseLeave={handleKiMouseLeave}
                 >
                   <Link to="/engage/voice" className="block px-4 py-2 text-sm text-gray-700 hover:bg-engage-surface transition-colors">
                     Linkty Voice
@@ -78,6 +104,14 @@ const EngageHeader: React.FC = () => {
               Ressourcen
             </Link>
 
+            <a
+              href="https://login.linkty.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-all"
+            >
+              Portalzugang
+            </a>
             <a
               href="#demo"
               className="px-6 py-2 bg-engage-accent text-white font-semibold rounded-lg hover:bg-engage-accent/90 transition-all shadow-md hover:shadow-lg"
@@ -128,6 +162,14 @@ const EngageHeader: React.FC = () => {
               Ressourcen
             </Link>
 
+            <a
+              href="https://login.linkty.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-center px-6 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-all"
+            >
+              Portalzugang
+            </a>
             <a
               href="#demo"
               className="block text-center px-6 py-3 bg-engage-accent text-white font-semibold rounded-lg hover:bg-engage-accent/90 transition-all"

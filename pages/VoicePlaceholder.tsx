@@ -30,7 +30,7 @@ const VoicePlaceholder: React.FC = () => {
         </div>
       )}
 
-      <div className="min-h-screen bg-gradient-to-b from-teal-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-voice-accent/10 to-white">
         {/* Header */}
         <header className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md shadow-sm z-40">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
@@ -41,19 +41,29 @@ const VoicePlaceholder: React.FC = () => {
                 className="h-10"
               />
             </Link>
-            <Link
-              to="/"
-              className="text-sm font-semibold text-gray-600 hover:text-teal-600 transition-colors"
-            >
-              ← Zurück zur Startseite
-            </Link>
+            <div className="flex items-center gap-4">
+              <a
+                href="https://login.linkty.ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-semibold text-gray-600 hover:text-voice-accent transition-colors"
+              >
+                Portalzugang
+              </a>
+              <Link
+                to="/"
+                className="text-sm font-semibold text-gray-600 hover:text-voice-accent transition-colors"
+              >
+                ← Zurück zur Startseite
+              </Link>
+            </div>
           </div>
         </header>
 
         {/* Hero */}
         <section className="pt-32 pb-20 px-4">
           <div className="max-w-5xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-teal-100 text-teal-800 rounded-full text-sm font-semibold mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-voice-accent/20 text-voice-primary rounded-full text-sm font-semibold mb-8">
               <CheckCircle2 className="w-5 h-5" />
               Diese Dienstleistung ist bereits verfügbar
             </div>
@@ -62,7 +72,7 @@ const VoicePlaceholder: React.FC = () => {
               Linkty Voice ist einsatzbereit – die Detailseite folgt in Kürze
             </h1>
 
-            <p className="text-2xl md:text-3xl text-teal-600 font-bold mb-6">
+            <p className="text-2xl md:text-3xl text-voice-primary font-bold mb-6">
               Gehen Sie ran, auch wenn Sie nicht da sind.
             </p>
 
@@ -75,7 +85,7 @@ const VoicePlaceholder: React.FC = () => {
         {/* Main Content */}
         <section className="py-16 px-4 bg-white">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-br from-teal-500 to-teal-600 text-white rounded-2xl p-8 md:p-12 mb-16">
+            <div className="bg-gradient-to-br from-voice-primary to-voice-accent text-white rounded-2xl p-8 md:p-12 mb-16">
               <div className="flex items-center gap-3 mb-6">
                 <Phone className="w-8 h-8" />
                 <h2 className="text-3xl md:text-4xl font-bold">
@@ -96,15 +106,15 @@ const VoicePlaceholder: React.FC = () => {
             </div>
 
             {/* Die Lösung */}
-            <div className="mb-12 bg-teal-50 rounded-xl p-8">
-              <h3 className="text-2xl font-bold text-teal-900 mb-4">Die Lösung ist bereits verfügbar</h3>
-              <p className="text-lg text-teal-900 leading-relaxed mb-4">
+            <div className="mb-12 bg-voice-accent/10 rounded-xl p-8">
+              <h3 className="text-2xl font-bold text-voice-primary mb-4">Die Lösung ist bereits verfügbar</h3>
+              <p className="text-lg text-voice-primary leading-relaxed mb-4">
                 Linkty Voice ist Ihr digitaler Empfang, der niemals schläft. Unsere KI-Sprachbots
                 nehmen Anrufe 24/7 entgegen, qualifizieren Anfragen und leiten sie automatisch
                 an die richtige Stelle weiter. Die Technologie ist einsatzbereit – Sie können
                 sofort starten.
               </p>
-              <p className="text-lg text-teal-900 leading-relaxed">
+              <p className="text-lg text-voice-primary leading-relaxed">
                 Mit Linkty Voice erreichen Sie 100% Erreichbarkeit, ohne zusätzliches Personal
                 einstellen zu müssen. Die Bots lernen Ihre Prozesse, integrieren sich nahtlos
                 in Ihre bestehende Telefonanlage und sorgen dafür, dass keine wichtige Anfrage
@@ -127,7 +137,7 @@ const VoicePlaceholder: React.FC = () => {
                   'Keine wichtige Anfrage geht mehr verloren'
                 ].map((feature, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-6 h-6 text-teal-600 flex-shrink-0 mt-1" />
+                    <CheckCircle2 className="w-6 h-6 text-voice-accent flex-shrink-0 mt-1" />
                     <span className="text-gray-700 text-lg">{feature}</span>
                   </div>
                 ))}
@@ -135,7 +145,7 @@ const VoicePlaceholder: React.FC = () => {
             </div>
 
             {/* Hinweis */}
-            <div className="bg-gray-50 border-l-4 border-teal-500 p-6 rounded-r-lg mb-12">
+            <div className="bg-gray-50 border-l-4 border-voice-accent p-6 rounded-r-lg mb-12">
               <p className="text-gray-700 leading-relaxed">
                 Diese Seite wird gerade inhaltlich überarbeitet und mit weiteren Details angereichert.
                 Die Dienstleistung selbst steht Ihnen aber bereits vollumfänglich zur Verfügung.
@@ -148,20 +158,20 @@ const VoicePlaceholder: React.FC = () => {
             <div className="flex flex-col md:flex-row gap-4 justify-center">
               <button
                 onClick={() => setShowCalendar(true)}
-                className="px-10 py-4 bg-teal-600 text-white font-bold rounded-lg hover:bg-teal-700 transition-all shadow-lg transform hover:-translate-y-1"
+                className="px-10 py-4 bg-voice-primary text-white font-bold rounded-lg hover:bg-voice-accent transition-all shadow-lg transform hover:-translate-y-1"
               >
                 Jetzt unverbindliches Gespräch vereinbaren
               </button>
               <button
                 onClick={() => setShowCalendar(true)}
-                className="px-10 py-4 border-2 border-teal-600 text-teal-600 font-bold rounded-lg hover:bg-teal-50 transition-all"
+                className="px-10 py-4 border-2 border-voice-primary text-voice-primary font-bold rounded-lg hover:bg-voice-accent/10 transition-all"
               >
                 Live-Demo anfragen
               </button>
             </div>
 
             <p className="text-center text-gray-600 mt-8">
-              Oder direkt per E-Mail: <a href="mailto:info@linkty.de" className="text-teal-600 hover:underline font-semibold">info@linkty.de</a>
+              Oder direkt per E-Mail: <a href="mailto:voice@linkty.ai" className="text-voice-accent hover:underline font-semibold">voice@linkty.ai</a>
             </p>
           </div>
         </section>
@@ -173,11 +183,13 @@ const VoicePlaceholder: React.FC = () => {
               Linkty Voice ist Teil der Linkty Group – Ihr Partner für digitale Automatisierung und Wachstum.
             </p>
             <div className="flex gap-6 justify-center text-sm">
-              <Link to="/" className="hover:text-teal-400 transition-colors">Startseite</Link>
+              <Link to="/" className="hover:text-voice-accent transition-colors">Startseite</Link>
               <span className="text-gray-600">|</span>
-              <Link to="/impressum" className="hover:text-teal-400 transition-colors">Impressum</Link>
+              <a href="https://login.linkty.ai" target="_blank" rel="noopener noreferrer" className="hover:text-voice-accent transition-colors">Portalzugang</a>
               <span className="text-gray-600">|</span>
-              <Link to="/datenschutz" className="hover:text-teal-400 transition-colors">Datenschutz</Link>
+              <Link to="/impressum" className="hover:text-voice-accent transition-colors">Impressum</Link>
+              <span className="text-gray-600">|</span>
+              <Link to="/datenschutz" className="hover:text-voice-accent transition-colors">Datenschutz</Link>
             </div>
           </div>
         </footer>

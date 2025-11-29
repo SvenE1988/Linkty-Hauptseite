@@ -30,7 +30,7 @@ const StudioPlaceholder: React.FC = () => {
         </div>
       )}
 
-      <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-studio-accent/10 to-white">
         {/* Header */}
         <header className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md shadow-sm z-40">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
@@ -41,19 +41,29 @@ const StudioPlaceholder: React.FC = () => {
                 className="h-10"
               />
             </Link>
-            <Link
-              to="/"
-              className="text-sm font-semibold text-gray-600 hover:text-purple-600 transition-colors"
-            >
-              ← Zurück zur Startseite
-            </Link>
+            <div className="flex items-center gap-4">
+              <a
+                href="https://login.linkty.ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-semibold text-gray-600 hover:text-studio-accent transition-colors"
+              >
+                Portalzugang
+              </a>
+              <Link
+                to="/"
+                className="text-sm font-semibold text-gray-600 hover:text-studio-accent transition-colors"
+              >
+                ← Zurück zur Startseite
+              </Link>
+            </div>
           </div>
         </header>
 
         {/* Hero */}
         <section className="pt-32 pb-20 px-4">
           <div className="max-w-5xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-semibold mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-studio-accent/20 text-studio-primary rounded-full text-sm font-semibold mb-8">
               <CheckCircle2 className="w-5 h-5" />
               Unser komplettes Leistungsspektrum steht zur Verfügung
             </div>
@@ -62,7 +72,7 @@ const StudioPlaceholder: React.FC = () => {
               Linkty Studio ist bereits für Sie da – die Webseite wird gerade überarbeitet
             </h1>
 
-            <p className="text-2xl md:text-3xl text-purple-600 font-bold mb-6">
+            <p className="text-2xl md:text-3xl text-studio-primary font-bold mb-6">
               Ihr kompletter Außenauftritt: Von der Webseite bis zum täglichen Post.
             </p>
 
@@ -75,7 +85,7 @@ const StudioPlaceholder: React.FC = () => {
         {/* Main Content */}
         <section className="py-16 px-4 bg-white">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-2xl p-8 md:p-12 mb-16">
+            <div className="bg-gradient-to-br from-studio-primary to-studio-accent text-white rounded-2xl p-8 md:p-12 mb-16">
               <div className="flex items-center gap-3 mb-6">
                 <Palette className="w-8 h-8" />
                 <h2 className="text-3xl md:text-4xl font-bold">
@@ -96,16 +106,16 @@ const StudioPlaceholder: React.FC = () => {
             </div>
 
             {/* Die Lösung */}
-            <div className="mb-12 bg-purple-50 rounded-xl p-8">
-              <h3 className="text-2xl font-bold text-purple-900 mb-4">Die Lösung ist bereits verfügbar</h3>
-              <p className="text-lg text-purple-900 leading-relaxed mb-4">
+            <div className="mb-12 bg-studio-accent/10 rounded-xl p-8">
+              <h3 className="text-2xl font-bold text-studio-primary mb-4">Die Lösung ist bereits verfügbar</h3>
+              <p className="text-lg text-studio-primary leading-relaxed mb-4">
                 Linkty Studio ist Ihre ausgelagerte Marketingabteilung. Wir übernehmen alles:
                 Von der modernen, conversion-optimierten Webseite über professionelle Content
                 Creation (Foto & Video) bis hin zum täglichen Social Media Management. Auch
                 Reputationsmanagement gehört dazu – wir überwachen und optimieren Ihre Online-
                 Bewertungen. Die Services sind live und einsatzbereit.
               </p>
-              <p className="text-lg text-purple-900 leading-relaxed">
+              <p className="text-lg text-studio-primary leading-relaxed">
                 Sie erhalten einen digitalen Außenauftritt, der Vertrauen schafft und Kunden
                 anzieht – ohne dass Sie sich selbst darum kümmern müssen. Ob Makler, KMU oder
                 Dienstleister: Wir kennen Ihre Branche und wissen, was funktioniert. Von der
@@ -127,7 +137,7 @@ const StudioPlaceholder: React.FC = () => {
                   'Auf Ihre Branche zugeschnitten'
                 ].map((feature, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-6 h-6 text-purple-600 flex-shrink-0 mt-1" />
+                    <CheckCircle2 className="w-6 h-6 text-studio-accent flex-shrink-0 mt-1" />
                     <span className="text-gray-700 text-lg">{feature}</span>
                   </div>
                 ))}
@@ -135,7 +145,7 @@ const StudioPlaceholder: React.FC = () => {
             </div>
 
             {/* Hinweis */}
-            <div className="bg-gray-50 border-l-4 border-purple-500 p-6 rounded-r-lg mb-12">
+            <div className="bg-gray-50 border-l-4 border-studio-accent p-6 rounded-r-lg mb-12">
               <p className="text-gray-700 leading-relaxed">
                 Wir arbeiten gerade daran, diese Seite mit Portfolio-Beispielen, Case Studies und
                 weiteren Details zu erweitern. Das ändert aber nichts daran, dass Sie schon jetzt
@@ -148,20 +158,20 @@ const StudioPlaceholder: React.FC = () => {
             <div className="flex flex-col md:flex-row gap-4 justify-center">
               <button
                 onClick={() => setShowCalendar(true)}
-                className="px-10 py-4 bg-purple-600 text-white font-bold rounded-lg hover:bg-purple-700 transition-all shadow-lg transform hover:-translate-y-1"
+                className="px-10 py-4 bg-studio-primary text-white font-bold rounded-lg hover:bg-studio-accent transition-all shadow-lg transform hover:-translate-y-1"
               >
                 Kostenlose Erstberatung buchen
               </button>
               <button
                 onClick={() => setShowCalendar(true)}
-                className="px-10 py-4 border-2 border-purple-600 text-purple-600 font-bold rounded-lg hover:bg-purple-50 transition-all"
+                className="px-10 py-4 border-2 border-studio-primary text-studio-primary font-bold rounded-lg hover:bg-studio-accent/10 transition-all"
               >
                 Referenzen & Portfolio ansehen
               </button>
             </div>
 
             <p className="text-center text-gray-600 mt-8">
-              Oder direkt anfragen: <a href="mailto:studio@linkty.de" className="text-purple-600 hover:underline font-semibold">studio@linkty.de</a>
+              Oder direkt anfragen: <a href="mailto:studio@linkty.de" className="text-studio-accent hover:underline font-semibold">studio@linkty.de</a>
             </p>
           </div>
         </section>
@@ -173,11 +183,13 @@ const StudioPlaceholder: React.FC = () => {
               Linkty Studio ist Teil der Linkty Group – Ihre Full-Service-Agentur für digitale Sichtbarkeit.
             </p>
             <div className="flex gap-6 justify-center text-sm">
-              <Link to="/" className="hover:text-purple-400 transition-colors">Startseite</Link>
+              <Link to="/" className="hover:text-studio-accent transition-colors">Startseite</Link>
               <span className="text-gray-600">|</span>
-              <Link to="/impressum" className="hover:text-purple-400 transition-colors">Impressum</Link>
+              <a href="https://login.linkty.ai" target="_blank" rel="noopener noreferrer" className="hover:text-studio-accent transition-colors">Portalzugang</a>
               <span className="text-gray-600">|</span>
-              <Link to="/datenschutz" className="hover:text-purple-400 transition-colors">Datenschutz</Link>
+              <Link to="/impressum" className="hover:text-studio-accent transition-colors">Impressum</Link>
+              <span className="text-gray-600">|</span>
+              <Link to="/datenschutz" className="hover:text-studio-accent transition-colors">Datenschutz</Link>
             </div>
           </div>
         </footer>

@@ -66,6 +66,11 @@ const EngageFooter: React.FC = () => {
                   Demo buchen
                 </a>
               </li>
+              <li>
+                <a href="https://login.linkty.ai" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
+                  Portalzugang
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -88,9 +93,13 @@ const EngageFooter: React.FC = () => {
 
         <div className="border-t border-white/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-2xl font-bold mb-4 md:mb-0">
-              Linkty <span className="text-engage-accent">|</span> Engage
-            </div>
+            <Link to="/engage" className="mb-4 md:mb-0">
+              <img
+                src="https://storage.googleapis.com/msgsndr/Av3P0jZ2jSTK0YnBojKR/media/6929959d6a32b2f3f4974322.png"
+                alt="Linkty Engage"
+                className="h-10"
+              />
+            </Link>
             <div className="text-sm text-gray-400">
               © 2025 Linkty. Alle Rechte vorbehalten.
             </div>
