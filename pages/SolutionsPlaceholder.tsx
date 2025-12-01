@@ -20,7 +20,7 @@ const SolutionsPlaceholder: React.FC = () => {
             </button>
             <div className="p-6">
               <iframe
-                src="https://link.saleshub360.de/widget/booking/EAqjBUlT5vgXjUg1UxFG"
+                src="https://link.linkty.ai/widget/bookings/linkty-erstgespraech"
                 style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '600px' }}
                 scrolling="no"
                 id="EAqjBUlT5vgXjUg1UxFG_solutions"
