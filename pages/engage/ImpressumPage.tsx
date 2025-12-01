@@ -30,14 +30,13 @@ const ImpressumPage: React.FC = () => {
           </h2>
           <p className="text-gray-700 mb-4">
             Sven Erkens<br />
-            Emir Corbo
           </p>
 
           <h2 className="text-2xl font-bold text-engage-primary mt-8 mb-4">
             Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
           </h2>
           <p className="text-gray-700 mb-4">
-            Sven Erkens und Emir Corbo<br />
+            Sven Erkens<br />
             Haubenkopfstr. 12<br />
             76189 Karlsruhe
           </p>
