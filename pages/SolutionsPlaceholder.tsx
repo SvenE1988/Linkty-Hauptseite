@@ -22,7 +22,7 @@ const SolutionsPlaceholder: React.FC = () => {
               <iframe
                 src="https://link.linkty.ai/widget/bookings/linkty-erstgespraech"
                 style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '600px' }}
-                scrolling="no"
+                scrolling="yes"
                 id="EAqjBUlT5vgXjUg1UxFG_solutions"
               />
             </div>
