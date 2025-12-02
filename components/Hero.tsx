@@ -28,13 +28,23 @@ const Hero: React.FC = () => {
           style={{ scale: imageScale, opacity: imageOpacity }}
           className="absolute inset-0 z-0 flex items-center justify-center"
         >
-           {/* Using a tech-abstract image */}
+           <video
+            src="https://storage.googleapis.com/msgsndr/Av3P0jZ2jSTK0YnBojKR/media/692f1b4e2b865e7556612405.mp4"
+            poster="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=60&w=1200&auto=format&fit=crop&dpr=2"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            aria-label="Animiertes Hintergrundvideo mit bewegtem Globus und digitalen Verbindungen"
+            className="w-full h-full object-cover opacity-100 transition-all duration-1000 hidden md:block"
+          />
            <img
             src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=60&w=1200&auto=format&fit=crop&dpr=2"
             alt="Abstraktes digitales Netzwerk mit leuchtenden Verbindungen und globaler Technologie-Visualisierung"
             loading="eager"
             decoding="async"
-            className="w-full h-full object-cover opacity-100 transition-all duration-1000"
+            className="w-full h-full object-cover opacity-100 transition-all duration-1000 md:hidden"
           />
            {/* **VERBESSERT: Dunkles Overlay von /30 auf /15 reduziert** */}
            <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/15 to-transparent" />
