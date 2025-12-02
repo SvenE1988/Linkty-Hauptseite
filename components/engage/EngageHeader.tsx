@@ -46,9 +46,12 @@ const EngageHeader: React.FC = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <div className="relative group">
               <button
-                className="flex items-center space-x-1 text-gray-700 hover:text-engage-primary transition-colors"
+                className="flex items-center space-x-1 text-gray-700 hover:text-engage-primary transition-colors min-h-[44px] px-3"
                 onMouseEnter={handleSoftwareMouseEnter}
                 onMouseLeave={handleSoftwareMouseLeave}
+                aria-label="Software Menü öffnen"
+                aria-haspopup="true"
+                aria-expanded={softwareDropdownOpen}
               >
                 <span className="font-medium">Software</span>
                 <ChevronDown className="w-4 h-4" />
@@ -77,9 +80,12 @@ const EngageHeader: React.FC = () => {
 
             <div className="relative group">
               <button
-                className="flex items-center space-x-1 text-gray-700 hover:text-engage-primary transition-colors"
+                className="flex items-center space-x-1 text-gray-700 hover:text-engage-primary transition-colors min-h-[44px] px-3"
                 onMouseEnter={handleKiMouseEnter}
                 onMouseLeave={handleKiMouseLeave}
+                aria-label="KI & Automation Menü öffnen"
+                aria-haspopup="true"
+                aria-expanded={kiDropdownOpen}
               >
                 <span className="font-medium">KI & Automation</span>
                 <ChevronDown className="w-4 h-4" />
@@ -121,8 +127,10 @@ const EngageHeader: React.FC = () => {
           </nav>
 
           <button
-            className="md:hidden text-gray-700"
+            className="md:hidden text-gray-700 min-h-[44px] min-w-[44px] flex items-center justify-center"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? "Menü schließen" : "Menü öffnen"}
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>

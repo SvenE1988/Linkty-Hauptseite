@@ -9,7 +9,8 @@ const businessUnits = [
     focus: "Für Versicherungsmakler & Finanzdienstleister",
     headline: "Ihr MVP verwaltet Akten. Linkty aktiviert Menschen.",
     pitch: "Wir verwandeln Ihre bestehende Datenbank in eine aktive Verkaufsmaschine. Unser System automatisiert Follow-ups, generiert Termine aus dem Bestand und sorgt dafür, dass kein Kunde vergessen wird.",
-    img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop", // Data/Dashboard
+    img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=60&w=800&auto=format&fit=crop&dpr=2",
+    imgAlt: "CRM Dashboard mit Datenvisualisierung und Analytik für Finanzdienstleister",
     color: "from-blue-600 to-blue-400"
   },
   { 
@@ -18,7 +19,8 @@ const businessUnits = [
     focus: "Für Hausverwaltungen, Agenturen & Praxen",
     headline: "Gehen Sie ran, auch wenn Sie nicht da sind.",
     pitch: "Intelligente KI-Sprachbots, die Anrufe 24/7 entgegennehmen, qualifizieren und weiterleiten. Ihr digitaler Empfang, der niemals schläft – 100% Erreichbarkeit, 0% Stress.",
-    img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop", // Communication/Waveform
+    img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=60&w=800&auto=format&fit=crop&dpr=2",
+    imgAlt: "Kommunikations-Wellenform und Audio-Visualisierung für KI-Telefonie",
     color: "from-teal-500 to-teal-300"
   },
   { 
@@ -27,7 +29,8 @@ const businessUnits = [
     focus: "Für Makler, KMU & Dienstleister",
     headline: "Webseiten, die nicht nur gut aussehen, sondern Kunden gewinnen.",
     pitch: "Wir bauen Webseiten, die Besucher gezielt in Anfragen verwandeln. Wir kombinieren technisches Verständnis für Ihre Branche mit hochwertigem Design für einen zukunftssicheren Außenauftritt.",
-    img: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2070&auto=format&fit=crop", // Design/Structure
+    img: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=60&w=800&auto=format&fit=crop&dpr=2",
+    imgAlt: "Modernes Webdesign und Website-Struktur mit UI/UX Elementen",
     color: "from-indigo-600 to-purple-500"
   },
   { 
@@ -36,7 +39,8 @@ const businessUnits = [
     focus: "Für PV-Solateure & Vertriebsorganisationen",
     headline: "Wir übernehmen die Fleißarbeit. Ihr Team macht den Umsatz.",
     pitch: "Ob Lead-Scraping oder komplexe Schnittstellen: Wir bauen die technische Brücke, die Ihnen die manuelle Arbeit abnimmt, damit sich Ihr Team voll auf den Abschluss konzentrieren kann.",
-    img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop", // Code/Tech
+    img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=60&w=800&auto=format&fit=crop&dpr=2",
+    imgAlt: "Programmier-Code und technische Automatisierungslösungen",
     color: "from-cyan-600 to-blue-600"
   },
 ];
@@ -83,10 +87,12 @@ const HorizontalScroll: React.FC = () => {
             >
               {/* Background Image with Gradient Overlay */}
               <div className="absolute inset-0 z-0">
-                 <img 
-                    src={unit.img} 
-                    alt={unit.name} 
-                    className="w-full h-full object-cover opacity-40 transition-transform duration-1000 ease-out group-hover:scale-110" 
+                 <img
+                    src={unit.img}
+                    alt={unit.imgAlt}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover opacity-40 transition-transform duration-1000 ease-out group-hover:scale-110"
                  />
                  <div className={`absolute inset-0 bg-gradient-to-t ${unit.color} opacity-20 mix-blend-multiply group-hover:opacity-40 transition-opacity duration-700`} />
                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-brand-navy/80 to-brand-navy" />

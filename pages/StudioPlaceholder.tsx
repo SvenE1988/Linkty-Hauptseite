@@ -17,6 +17,7 @@ const StudioPlaceholder: React.FC = () => {
             <button
               onClick={() => setShowCalendar(false)}
               className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl font-bold z-10 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg"
+              aria-label="Kalender schließen"
             >
               ×
             </button>
@@ -26,21 +27,23 @@ const StudioPlaceholder: React.FC = () => {
                 style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '700px', height: '85vh' }}
                 scrolling="no"
                 id="EAqjBUlT5vgXjUg1UxFG_studio"
+                title="Linkty Studio Demo Terminbuchung"
               />
             </div>
           </div>
         </div>
       )}
 
-      <div className="min-h-screen bg-gradient-to-b from-studio-accent/10 to-white">
+      <main className="min-h-screen bg-gradient-to-b from-studio-accent/10 to-white" role="main">
         {/* Header */}
         <header className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md shadow-sm z-40">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-            <Link to="/" className="flex items-center gap-3">
+            <Link to="/" className="flex items-center gap-3" aria-label="Zurück zur Startseite">
               <img
                 src="https://storage.googleapis.com/msgsndr/Av3P0jZ2jSTK0YnBojKR/media/692a88bf313bfdca12ec1cd2.png"
-                alt="Linkty Studio"
+                alt="Linkty Studio Logo - Full-Service Digital Marketing"
                 className="h-10"
+                loading="eager"
               />
             </Link>
             <div className="flex items-center gap-4">
@@ -202,7 +205,7 @@ const StudioPlaceholder: React.FC = () => {
             </div>
           </div>
         </footer>
-      </div>
+      </main>
     </>
   );
 };

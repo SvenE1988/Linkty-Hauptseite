@@ -29,10 +29,11 @@ const Hero: React.FC = () => {
           className="absolute inset-0 z-0 flex items-center justify-center"
         >
            {/* Using a tech-abstract image */}
-           <img 
-            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop" 
-            alt="Digital Network Abstract" 
-            // **VERBESSERT: opacity-100 und saturate-0 entfernt (Bild ist nun farbig & voll sichtbar)**
+           <img
+            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=60&w=1200&auto=format&fit=crop&dpr=2"
+            alt="Abstraktes digitales Netzwerk mit leuchtenden Verbindungen und globaler Technologie-Visualisierung"
+            loading="eager"
+            decoding="async"
             className="w-full h-full object-cover opacity-100 transition-all duration-1000"
           />
            {/* **VERBESSERT: Dunkles Overlay von /30 auf /15 reduziert** */}
@@ -51,7 +52,7 @@ const Hero: React.FC = () => {
              <div className="w-12 h-12 border-4 border-brand-teal rounded-lg transform rotate-45" />
              <div className="w-12 h-12 border-4 border-brand-blue rounded-lg transform rotate-45 -ml-8 mix-blend-screen" />
           </div>
-          <h1 className="text-[15vw] md:text-[12vw] leading-none font-sans font-black text-transparent bg-clip-text bg-gradient-to-br from-brand-teal via-white to-brand-blue tracking-tighter">
+          <h1 className="text-[12vw] sm:text-[10vw] md:text-[12vw] lg:text-[10vw] leading-none font-sans font-black text-transparent bg-clip-text bg-gradient-to-br from-brand-teal via-white to-brand-blue tracking-tighter">
             LINKTY
           </h1>
           <p className="text-lg md:text-2xl font-light text-brand-teal/80 mt-2 tracking-[0.3em] uppercase">
@@ -59,12 +60,14 @@ const Hero: React.FC = () => {
           </p>
         </motion.div>
         
-        <motion.div 
+        <motion.div
             style={{ opacity: useTransform(scrollYProgress, [0, 0.1], [1, 0]) }}
             className="absolute bottom-12 left-1/2 -translate-x-1/2 text-white/50 text-sm animate-bounce flex flex-col items-center gap-2"
+            role="button"
+            aria-label="Nach unten scrollen um mehr zu erfahren"
         >
             <span className="uppercase tracking-widest text-xs">Starten Sie hier</span>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
         </motion.div>
       </div>
     </div>

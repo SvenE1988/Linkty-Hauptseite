@@ -46,14 +46,16 @@ const EngageHero: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <a
                 href="#demo"
-                className="inline-flex items-center justify-center px-8 py-4 bg-engage-accent text-white font-semibold rounded-lg hover:bg-engage-accent/90 transition-all shadow-lg hover:shadow-xl group"
+                className="inline-flex items-center justify-center px-8 py-4 bg-engage-accent text-white font-semibold rounded-lg hover:bg-engage-accent/90 transition-all shadow-lg hover:shadow-xl group min-h-[44px]"
+                aria-label="Jetzt Demo-Termin buchen"
               >
                 Jetzt Demo buchen
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </a>
               <a
                 href="#features"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white text-engage-primary font-semibold rounded-lg border-2 border-engage-primary hover:bg-engage-primary hover:text-white transition-all"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white text-engage-primary font-semibold rounded-lg border-2 border-engage-primary hover:bg-engage-primary hover:text-white transition-all min-h-[44px]"
+                aria-label="Mehr über Linkty Engage erfahren"
               >
                 Mehr erfahren
               </a>
@@ -62,12 +64,12 @@ const EngageHero: React.FC = () => {
 
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
-              {/* TODO: Replace with Cloudinary/Supabase URL */}
               <img
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
-                alt="CRM Dashboard"
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=60&w=800&auto=format&fit=crop&dpr=2"
+                alt="CRM Dashboard mit Datenvisualisierung, Kundenkontakten und Vertriebsstatistiken"
                 className="w-full h-auto"
                 loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-engage-primary/20 to-transparent" />
             </div>

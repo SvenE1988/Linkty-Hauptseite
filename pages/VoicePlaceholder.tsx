@@ -11,11 +11,12 @@ const VoicePlaceholder: React.FC = () => {
   return (
     <>
       {showCalendar && (
-        <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-2 sm:p-4" onClick={() => setShowCalendar(false)}>
+        <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-2 sm:p-4" onClick={() => setShowCalendar(false)} role="dialog" aria-modal="true" aria-labelledby="calendar-title">
           <div className="bg-white rounded-lg w-full max-w-5xl max-h-[95vh] overflow-auto relative" onClick={(e) => e.stopPropagation()}>
             <button
               onClick={() => setShowCalendar(false)}
               className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl font-bold z-10 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg"
+              aria-label="Kalender schließen"
             >
               ×
             </button>
@@ -25,21 +26,23 @@ const VoicePlaceholder: React.FC = () => {
                 style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '700px', height: '85vh' }}
                 scrolling="no"
                 id="EAqjBUlT5vgXjUg1UxFG_voice"
+                title="Linkty Voice Demo Terminbuchung"
               />
             </div>
           </div>
         </div>
       )}
 
-      <div className="min-h-screen bg-gradient-to-b from-voice-accent/10 to-white">
+      <main className="min-h-screen bg-gradient-to-b from-voice-accent/10 to-white" role="main">
         {/* Header */}
         <header className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md shadow-sm z-40">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-            <Link to="/" className="flex items-center gap-3">
+            <Link to="/" className="flex items-center gap-3" aria-label="Zurück zur Startseite">
               <img
                 src="https://storage.googleapis.com/msgsndr/Av3P0jZ2jSTK0YnBojKR/media/692a88bf1f60a17cede8d00c.png"
-                alt="Linkty Voice"
+                alt="Linkty Voice Logo - KI-gestützte Telefonie"
                 className="h-10"
+                loading="eager"
               />
             </Link>
             <div className="flex items-center gap-4">
@@ -53,7 +56,8 @@ const VoicePlaceholder: React.FC = () => {
               </a>
               <button
                 onClick={() => setShowCalendar(true)}
-                className="px-6 py-2 bg-voice-primary text-white font-semibold rounded-lg hover:bg-voice-accent transition-all shadow-md hover:shadow-lg"
+                className="px-6 py-2 bg-voice-primary text-white font-semibold rounded-lg hover:bg-voice-accent transition-all shadow-md hover:shadow-lg min-h-[44px]"
+                aria-label="Demo-Termin buchen"
               >
                 Demo buchen
               </button>
@@ -225,7 +229,7 @@ const VoicePlaceholder: React.FC = () => {
             </div>
           </div>
         </footer>
-      </div>
+      </main>
     </>
   );
 };
