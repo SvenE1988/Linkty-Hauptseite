@@ -14,7 +14,7 @@ const EngageLayout: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {!isImpressumOrDatenschutz && <VapiFloatingWidget accentColor="#00a8a8" pageName="Engage" />}
+      {!isImpressumOrDatenschutz && <VapiFloatingWidget pageName="Engage" />}
       <EngageHeader />
       <main>
         <Outlet />
