@@ -8,7 +8,7 @@ const testimonials = [
     author: 'Michael Schmidt',
     role: 'Versicherungsmakler, Hamburg',
     // TODO: Replace with Cloudinary/Supabase URL
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=60&w=200&dpr=2&auto=format&fit=crop',
   },
   {
     quote:
@@ -16,7 +16,7 @@ const testimonials = [
     author: 'Sandra Weber',
     role: 'Finanzberaterin, München',
     // TODO: Replace with Cloudinary/Supabase URL
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=60&w=200&dpr=2&auto=format&fit=crop',
   },
   {
     quote:
@@ -24,7 +24,7 @@ const testimonials = [
     author: 'Thomas Bauer',
     role: 'Geschäftsführer Maklerbüro, Frankfurt',
     // TODO: Replace with Cloudinary/Supabase URL
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2070&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=60&w=200&dpr=2&auto=format&fit=crop',
   },
 ];
 
@@ -59,6 +59,7 @@ const TestimonialsSection: React.FC = () => {
                   alt={testimonial.author}
                   className="w-12 h-12 rounded-full object-cover"
                   loading="lazy"
+                  decoding="async"
                 />
                 <div>
                   <div className="font-bold text-engage-primary">{testimonial.author}</div>

@@ -1,28 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { usePageTitle } from '../hooks/usePageTitle';
+import LegalHeader from '../components/legal/LegalHeader';
+import SimpleLegalFooter from '../components/shared/SimpleLegalFooter';
 
 const ImpressumPage: React.FC = () => {
   usePageTitle('Impressum | Linkty Group');
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="bg-brand-navy text-white py-6 px-4">
-        <div className="max-w-4xl mx-auto">
-          <Link to="/" className="text-brand-teal hover:text-white transition-colors">
-            ← Zurück zur Startseite
-          </Link>
-        </div>
-      </header>
+      <LegalHeader title="Impressum" />
 
-      {/* Content */}
       <div className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-brand-navy mb-8">
-            Impressum
-          </h1>
-
           <div className="prose prose-lg max-w-none text-gray-700">
             <h2 className="text-2xl font-bold text-brand-navy mt-8 mb-4">
               Angaben gemäß § 5 TMG
@@ -103,19 +92,7 @@ const ImpressumPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="bg-brand-navy text-white py-8 px-4 mt-16">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="flex gap-6 justify-center text-sm mb-4">
-            <Link to="/" className="hover:text-brand-teal transition-colors">Startseite</Link>
-            <span className="text-gray-600">|</span>
-            <Link to="/impressum" className="hover:text-brand-teal transition-colors">Impressum</Link>
-            <span className="text-gray-600">|</span>
-            <Link to="/datenschutz" className="hover:text-brand-teal transition-colors">Datenschutz</Link>
-          </div>
-          <p className="text-xs opacity-60">© 2025 LINKTY GROUP. ALL RIGHTS RESERVED.</p>
-        </div>
-      </footer>
+      <SimpleLegalFooter variant="navy" />
     </div>
   );
 };

@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { Phone, CheckCircle2 } from 'lucide-react';
 import { usePageTitle } from '../hooks/usePageTitle';
 import VapiInlineAssistant from '../components/VapiInlineAssistant';
+import CalendarModal from '../components/shared/CalendarModal';
+import PlaceholderHeader from '../components/shared/PlaceholderHeader';
+import SimpleLegalFooter from '../components/shared/SimpleLegalFooter';
 
 const VoicePlaceholder: React.FC = () => {
   usePageTitle('Linkty Voice | KI-Telefonie für 100% Erreichbarkeit');
@@ -10,66 +13,19 @@ const VoicePlaceholder: React.FC = () => {
 
   return (
     <>
-      {showCalendar && (
-        <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-2 sm:p-4" onClick={() => setShowCalendar(false)} role="dialog" aria-modal="true" aria-labelledby="calendar-title">
-          <div className="bg-white rounded-lg w-full max-w-5xl max-h-[95vh] overflow-auto relative" onClick={(e) => e.stopPropagation()}>
-            <button
-              onClick={() => setShowCalendar(false)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl font-bold z-10 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg"
-              aria-label="Kalender schließen"
-            >
-              ×
-            </button>
-            <div className="p-4 sm:p-6">
-              <iframe
-                src="https://link.linkty.ai/widget/booking/EAqjBUlT5vgXjUg1UxFG"
-                style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '700px', height: '85vh' }}
-                scrolling="no"
-                id="EAqjBUlT5vgXjUg1UxFG_voice"
-                title="Linkty Voice Demo Terminbuchung"
-              />
-            </div>
-          </div>
-        </div>
-      )}
+      <CalendarModal
+        isOpen={showCalendar}
+        onClose={() => setShowCalendar(false)}
+        iframeId="EAqjBUlT5vgXjUg1UxFG_voice"
+      />
 
       <main className="min-h-screen bg-gradient-to-b from-voice-accent/10 to-white" role="main">
-        {/* Header */}
-        <header className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md shadow-sm z-40">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-            <Link to="/" className="flex items-center gap-3" aria-label="Zurück zur Startseite">
-              <img
-                src="https://storage.googleapis.com/msgsndr/Av3P0jZ2jSTK0YnBojKR/media/692a88bf1f60a17cede8d00c.png"
-                alt="Linkty Voice Logo - KI-gestützte Telefonie"
-                className="h-10"
-                loading="eager"
-              />
-            </Link>
-            <div className="flex items-center gap-4">
-              <a
-                href="https://login.linkty.ai"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-2 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-all"
-              >
-                Portalzugang
-              </a>
-              <button
-                onClick={() => setShowCalendar(true)}
-                className="px-6 py-2 bg-voice-primary text-white font-semibold rounded-lg hover:bg-voice-accent transition-all shadow-md hover:shadow-lg min-h-[44px]"
-                aria-label="Demo-Termin buchen"
-              >
-                Demo buchen
-              </button>
-              <Link
-                to="/"
-                className="text-sm font-semibold text-gray-600 hover:text-voice-accent transition-colors"
-              >
-                ← Zurück zur Startseite
-              </Link>
-            </div>
-          </div>
-        </header>
+        <PlaceholderHeader
+          logoSrc="https://storage.googleapis.com/msgsndr/Av3P0jZ2jSTK0YnBojKR/media/692a88bf1f60a17cede8d00c.png"
+          logoAlt="Linkty Voice Logo - KI-gestützte Telefonie"
+          onDemoClick={() => setShowCalendar(true)}
+          primaryColor="voice-primary"
+        />
 
         {/* Hero */}
         <section className="pt-32 pb-12 px-4 relative">
@@ -212,23 +168,7 @@ const VoicePlaceholder: React.FC = () => {
           </div>
         </section>
 
-        {/* Footer */}
-        <footer className="bg-gray-900 text-white py-12 px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-gray-400 mb-4">
-              Linkty Voice ist Teil der Linkty Group – Ihr Partner für digitale Automatisierung und Wachstum.
-            </p>
-            <div className="flex gap-6 justify-center text-sm">
-              <Link to="/" className="hover:text-voice-accent transition-colors">Startseite</Link>
-              <span className="text-gray-600">|</span>
-              <a href="https://login.linkty.ai" target="_blank" rel="noopener noreferrer" className="hover:text-voice-accent transition-colors">Portalzugang</a>
-              <span className="text-gray-600">|</span>
-              <Link to="/impressum" className="hover:text-voice-accent transition-colors">Impressum</Link>
-              <span className="text-gray-600">|</span>
-              <Link to="/datenschutz" className="hover:text-voice-accent transition-colors">Datenschutz</Link>
-            </div>
-          </div>
-        </footer>
+        <SimpleLegalFooter variant="dark" accentColor="voice-accent" />
       </main>
     </>
   );

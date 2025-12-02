@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { Palette, CheckCircle2 } from 'lucide-react';
 import { usePageTitle } from '../hooks/usePageTitle';
 import VapiFloatingWidget from '../components/VapiFloatingWidget';
+import CalendarModal from '../components/shared/CalendarModal';
+import PlaceholderHeader from '../components/shared/PlaceholderHeader';
+import SimpleLegalFooter from '../components/shared/SimpleLegalFooter';
 
 const StudioPlaceholder: React.FC = () => {
   usePageTitle('Linkty Studio | Full-Service Digital Marketing');
@@ -11,65 +14,19 @@ const StudioPlaceholder: React.FC = () => {
   return (
     <>
       <VapiFloatingWidget pageName="Studio" />
-      {showCalendar && (
-        <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-2 sm:p-4" onClick={() => setShowCalendar(false)}>
-          <div className="bg-white rounded-lg w-full max-w-5xl max-h-[95vh] overflow-auto relative" onClick={(e) => e.stopPropagation()}>
-            <button
-              onClick={() => setShowCalendar(false)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl font-bold z-10 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg"
-              aria-label="Kalender schließen"
-            >
-              ×
-            </button>
-            <div className="p-4 sm:p-6">
-              <iframe
-                src="https://link.linkty.ai/widget/booking/EAqjBUlT5vgXjUg1UxFG"
-                style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '700px', height: '85vh' }}
-                scrolling="no"
-                id="EAqjBUlT5vgXjUg1UxFG_studio"
-                title="Linkty Studio Demo Terminbuchung"
-              />
-            </div>
-          </div>
-        </div>
-      )}
+      <CalendarModal
+        isOpen={showCalendar}
+        onClose={() => setShowCalendar(false)}
+        iframeId="EAqjBUlT5vgXjUg1UxFG_studio"
+      />
 
       <main className="min-h-screen bg-gradient-to-b from-studio-accent/10 to-white" role="main">
-        {/* Header */}
-        <header className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md shadow-sm z-40">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-            <Link to="/" className="flex items-center gap-3" aria-label="Zurück zur Startseite">
-              <img
-                src="https://storage.googleapis.com/msgsndr/Av3P0jZ2jSTK0YnBojKR/media/692a88bf313bfdca12ec1cd2.png"
-                alt="Linkty Studio Logo - Full-Service Digital Marketing"
-                className="h-10"
-                loading="eager"
-              />
-            </Link>
-            <div className="flex items-center gap-4">
-              <a
-                href="https://login.linkty.ai"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-2 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-all"
-              >
-                Portalzugang
-              </a>
-              <button
-                onClick={() => setShowCalendar(true)}
-                className="px-6 py-2 bg-studio-primary text-white font-semibold rounded-lg hover:bg-studio-accent transition-all shadow-md hover:shadow-lg"
-              >
-                Demo buchen
-              </button>
-              <Link
-                to="/"
-                className="text-sm font-semibold text-gray-600 hover:text-studio-accent transition-colors"
-              >
-                ← Zurück zur Startseite
-              </Link>
-            </div>
-          </div>
-        </header>
+        <PlaceholderHeader
+          logoSrc="https://storage.googleapis.com/msgsndr/Av3P0jZ2jSTK0YnBojKR/media/692a88bf313bfdca12ec1cd2.png"
+          logoAlt="Linkty Studio Logo - Full-Service Digital Marketing"
+          onDemoClick={() => setShowCalendar(true)}
+          primaryColor="studio-primary"
+        />
 
         {/* Hero */}
         <section className="pt-32 pb-20 px-4 relative">
@@ -189,22 +146,7 @@ const StudioPlaceholder: React.FC = () => {
         </section>
 
         {/* Footer */}
-        <footer className="bg-gray-900 text-white py-12 px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-gray-400 mb-4">
-              Linkty Studio ist Teil der Linkty Group – Ihre Full-Service-Agentur für digitale Sichtbarkeit.
-            </p>
-            <div className="flex gap-6 justify-center text-sm">
-              <Link to="/" className="hover:text-studio-accent transition-colors">Startseite</Link>
-              <span className="text-gray-600">|</span>
-              <a href="https://login.linkty.ai" target="_blank" rel="noopener noreferrer" className="hover:text-studio-accent transition-colors">Portalzugang</a>
-              <span className="text-gray-600">|</span>
-              <Link to="/impressum" className="hover:text-studio-accent transition-colors">Impressum</Link>
-              <span className="text-gray-600">|</span>
-              <Link to="/datenschutz" className="hover:text-studio-accent transition-colors">Datenschutz</Link>
-            </div>
-          </div>
-        </footer>
+        <SimpleLegalFooter variant="dark" accentColor="studio-accent" />
       </main>
     </>
   );
