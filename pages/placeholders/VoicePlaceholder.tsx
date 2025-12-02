@@ -24,7 +24,7 @@ const VoicePlaceholder: React.FC = () => {
         iframeId="EAqjBUlT5vgXjUg1UxFG_voice"
       />
 
-      <main className="min-h-screen bg-gradient-to-b from-voice-accent/10 to-white" role="main">
+      <main className="min-h-screen bg-white" role="main">
         <PlaceholderHeader
           logoSrc="https://storage.googleapis.com/msgsndr/Av3P0jZ2jSTK0YnBojKR/media/692a88bf1f60a17cede8d00c.png"
           logoAlt="Linkty Voice Logo - KI-gestützte Telefonie"
