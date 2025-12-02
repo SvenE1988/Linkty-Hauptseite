@@ -66,19 +66,28 @@ const VoicePlaceholder: React.FC = () => {
           </div>
         </section>
 
-        {/* Visual Hint for Floating Widget */}
+        {/* Kombinierte Kachel: Einsatzbereit + Live-Test */}
         <section className="pb-8 px-4">
           <div className="max-w-5xl mx-auto">
-            <div className="bg-gradient-to-r from-voice-primary/10 to-voice-accent/10 border-2 border-voice-accent rounded-xl p-6 text-center shadow-lg">
-              <div className="flex items-center justify-center gap-3 mb-2">
-                <Phone className="w-6 h-6 text-voice-primary" />
-                <p className="text-lg md:text-xl font-bold text-voice-primary">
-                  Live-Test verfügbar!
+            <div className="bg-gradient-to-br from-voice-primary to-voice-accent text-white rounded-2xl p-8 md:p-12 shadow-2xl">
+              <div className="flex items-center gap-3 mb-6">
+                <Phone className="w-8 h-8" />
+                <h2 className="text-3xl md:text-4xl font-bold">
+                  Diese Dienstleistung ist schon heute für Sie einsatzbereit
+                </h2>
+              </div>
+
+              <div className="mt-8 bg-white/10 backdrop-blur-sm border border-white/30 rounded-xl p-6 text-center">
+                <div className="flex items-center justify-center gap-3 mb-3">
+                  <Phone className="w-6 h-6 text-white" />
+                  <p className="text-xl md:text-2xl font-bold text-white">
+                    Live-Test verfügbar!
+                  </p>
+                </div>
+                <p className="text-base md:text-lg text-white/90 leading-relaxed">
+                  Klicken Sie auf den <span className="font-bold text-white">türkisen Button rechts unten</span> auf der Seite, um ein echtes Gespräch mit unserem Voice-Agenten zu starten und die Technologie selbst zu erleben.
                 </p>
               </div>
-              <p className="text-base md:text-lg text-gray-700">
-                Klicken Sie auf den <span className="font-semibold text-voice-primary">türkisen Button rechts unten</span> auf der Seite, um ein echtes Gespräch mit unserem Voice-Agenten zu starten.
-              </p>
             </div>
           </div>
         </section>
@@ -86,14 +95,6 @@ const VoicePlaceholder: React.FC = () => {
         {/* Main Content */}
         <section className="py-16 px-4 bg-white">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-br from-voice-primary to-voice-accent text-white rounded-2xl p-8 md:p-12 mb-16">
-              <div className="flex items-center gap-3 mb-6">
-                <Phone className="w-8 h-8" />
-                <h2 className="text-3xl md:text-4xl font-bold">
-                  Diese Dienstleistung ist schon heute für Sie einsatzbereit
-                </h2>
-              </div>
-            </div>
 
             {/* Das Problem */}
             <div className="mb-12">
