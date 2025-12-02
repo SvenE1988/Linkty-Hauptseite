@@ -10,18 +10,18 @@ const StudioPlaceholder: React.FC = () => {
   return (
     <>
       {showCalendar && (
-        <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4" onClick={() => setShowCalendar(false)}>
-          <div className="bg-white rounded-lg w-full max-w-3xl max-h-[90vh] overflow-auto relative" onClick={(e) => e.stopPropagation()}>
+        <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-2 sm:p-4" onClick={() => setShowCalendar(false)}>
+          <div className="bg-white rounded-lg w-full max-w-5xl max-h-[95vh] overflow-auto relative" onClick={(e) => e.stopPropagation()}>
             <button
               onClick={() => setShowCalendar(false)}
               className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl font-bold z-10 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg"
             >
               ×
             </button>
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
               <iframe
-                src="https://link.saleshub360.de/widget/booking/EAqjBUlT5vgXjUg1UxFG"
-                style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '600px' }}
+                src="https://link.linkty.ai/widget/booking/EAqjBUlT5vgXjUg1UxFG"
+                style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '700px', height: '85vh' }}
                 scrolling="no"
                 id="EAqjBUlT5vgXjUg1UxFG_studio"
               />
@@ -46,10 +46,16 @@ const StudioPlaceholder: React.FC = () => {
                 href="https://login.linkty.ai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-semibold text-gray-600 hover:text-studio-accent transition-colors"
+                className="px-6 py-2 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-all"
               >
                 Portalzugang
               </a>
+              <button
+                onClick={() => setShowCalendar(true)}
+                className="px-6 py-2 bg-studio-primary text-white font-semibold rounded-lg hover:bg-studio-accent transition-all shadow-md hover:shadow-lg"
+              >
+                Demo buchen
+              </button>
               <Link
                 to="/"
                 className="text-sm font-semibold text-gray-600 hover:text-studio-accent transition-colors"
@@ -61,8 +67,9 @@ const StudioPlaceholder: React.FC = () => {
         </header>
 
         {/* Hero */}
-        <section className="pt-32 pb-20 px-4">
-          <div className="max-w-5xl mx-auto text-center">
+        <section className="pt-32 pb-20 px-4 relative">
+          <div className="absolute inset-0 bg-gradient-to-b from-white/95 to-white/98 z-0"></div>
+          <div className="max-w-5xl mx-auto text-center relative z-10">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-studio-accent/20 text-studio-primary rounded-full text-sm font-semibold mb-8">
               <CheckCircle2 className="w-5 h-5" />
               Unser komplettes Leistungsspektrum steht zur Verfügung
@@ -72,7 +79,7 @@ const StudioPlaceholder: React.FC = () => {
               Linkty Studio ist bereits für Sie da – die Webseite wird gerade überarbeitet
             </h1>
 
-            <p className="text-2xl md:text-3xl text-studio-primary font-bold mb-6">
+            <p className="text-2xl md:text-3xl text-gray-800 font-bold mb-6 drop-shadow-sm">
               Ihr kompletter Außenauftritt: Von der Webseite bis zum täglichen Post.
             </p>
 

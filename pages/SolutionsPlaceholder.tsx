@@ -10,19 +10,19 @@ const SolutionsPlaceholder: React.FC = () => {
   return (
     <>
       {showCalendar && (
-        <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4" onClick={() => setShowCalendar(false)}>
-          <div className="bg-white rounded-lg w-full max-w-3xl max-h-[90vh] overflow-auto relative" onClick={(e) => e.stopPropagation()}>
+        <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-2 sm:p-4" onClick={() => setShowCalendar(false)}>
+          <div className="bg-white rounded-lg w-full max-w-5xl max-h-[95vh] overflow-auto relative" onClick={(e) => e.stopPropagation()}>
             <button
               onClick={() => setShowCalendar(false)}
               className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl font-bold z-10 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg"
             >
               ×
             </button>
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
               <iframe
-                src="https://link.linkty.ai/widget/bookings/linkty-erstgespraech"
-                style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '600px' }}
-                scrolling="yes"
+                src="https://link.linkty.ai/widget/booking/EAqjBUlT5vgXjUg1UxFG"
+                style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '700px', height: '85vh' }}
+                scrolling="no"
                 id="EAqjBUlT5vgXjUg1UxFG_solutions"
               />
             </div>
@@ -46,10 +46,16 @@ const SolutionsPlaceholder: React.FC = () => {
                 href="https://login.linkty.ai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-semibold text-gray-600 hover:text-solutions-accent transition-colors"
+                className="px-6 py-2 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-all"
               >
                 Portalzugang
               </a>
+              <button
+                onClick={() => setShowCalendar(true)}
+                className="px-6 py-2 bg-solutions-primary text-white font-semibold rounded-lg hover:bg-solutions-accent transition-all shadow-md hover:shadow-lg"
+              >
+                Beratung buchen
+              </button>
               <Link
                 to="/"
                 className="text-sm font-semibold text-gray-600 hover:text-solutions-accent transition-colors"
@@ -61,8 +67,9 @@ const SolutionsPlaceholder: React.FC = () => {
         </header>
 
         {/* Hero */}
-        <section className="pt-32 pb-20 px-4">
-          <div className="max-w-5xl mx-auto text-center">
+        <section className="pt-32 pb-20 px-4 relative">
+          <div className="absolute inset-0 bg-gradient-to-b from-white/95 to-white/98 z-0"></div>
+          <div className="max-w-5xl mx-auto text-center relative z-10">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-solutions-accent/20 text-solutions-primary rounded-full text-sm font-semibold mb-8">
               <CheckCircle2 className="w-5 h-5" />
               Technische Lösungen bereits im Einsatz
@@ -72,7 +79,7 @@ const SolutionsPlaceholder: React.FC = () => {
               Linkty Solutions ist produktiv – die Webseite wird aktualisiert
             </h1>
 
-            <p className="text-2xl md:text-3xl text-solutions-primary font-bold mb-6">
+            <p className="text-2xl md:text-3xl text-gray-800 font-bold mb-6 drop-shadow-sm">
               Wir übernehmen die Fleißarbeit. Ihr Team macht den Umsatz.
             </p>
 

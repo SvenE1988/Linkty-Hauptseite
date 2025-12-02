@@ -7,18 +7,18 @@ const Footer: React.FC = () => {
   return (
     <>
       {showCalendar && (
-        <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4" onClick={() => setShowCalendar(false)}>
-          <div className="bg-white rounded-lg w-full max-w-3xl max-h-[90vh] overflow-auto relative" onClick={(e) => e.stopPropagation()}>
+        <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-2 sm:p-4" onClick={() => setShowCalendar(false)}>
+          <div className="bg-white rounded-lg w-full max-w-5xl max-h-[95vh] overflow-auto relative" onClick={(e) => e.stopPropagation()}>
             <button
               onClick={() => setShowCalendar(false)}
               className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl font-bold z-10 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg"
             >
               ×
             </button>
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
               <iframe
-                src="https://link.saleshub360.de/widget/booking/EAqjBUlT5vgXjUg1UxFG"
-                style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '600px' }}
+                src="https://link.linkty.ai/widget/booking/EAqjBUlT5vgXjUg1UxFG"
+                style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '700px', height: '85vh' }}
                 scrolling="no"
                 id="EAqjBUlT5vgXjUg1UxFG_1764391826265"
               />
