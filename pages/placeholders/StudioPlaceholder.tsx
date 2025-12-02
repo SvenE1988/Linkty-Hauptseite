@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Palette, CheckCircle2 } from 'lucide-react';
-import { usePageTitle } from '../hooks/usePageTitle';
-import VapiFloatingWidget from '../components/VapiFloatingWidget';
-import CalendarModal from '../components/shared/CalendarModal';
-import PlaceholderHeader from '../components/shared/PlaceholderHeader';
-import SimpleLegalFooter from '../components/shared/SimpleLegalFooter';
+import { usePageTitle } from '../../hooks/usePageTitle';
+import VapiLazyWrapper from '../../components/vapi/VapiLazyWrapper';
+import CalendarModal from '../../components/shared/CalendarModal';
+import PlaceholderHeader from '../../components/shared/PlaceholderHeader';
+import SimpleLegalFooter from '../../components/shared/SimpleLegalFooter';
 
 const StudioPlaceholder: React.FC = () => {
   usePageTitle('Linkty Studio | Full-Service Digital Marketing');
@@ -13,7 +13,7 @@ const StudioPlaceholder: React.FC = () => {
 
   return (
     <>
-      <VapiFloatingWidget pageName="Studio" />
+      <VapiLazyWrapper pageName="Studio" />
       <CalendarModal
         isOpen={showCalendar}
         onClose={() => setShowCalendar(false)}

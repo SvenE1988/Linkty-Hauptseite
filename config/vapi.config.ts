@@ -80,9 +80,9 @@ export const VAPI_PAGE_CONFIGS: Record<string, VapiPageConfig> = {
     displayMode: 'floating',
   },
   voice: {
-    accentColor: '#0E5C7A',
-    title: 'Testen Sie unseren Voice Agent live!',
-    displayMode: 'inline',
+    accentColor: '#6DBBAA',
+    title: 'Linkty Voice - Live Assistent',
+    displayMode: 'floating',
   },
 };
 

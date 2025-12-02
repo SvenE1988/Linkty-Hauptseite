@@ -1,6 +1,6 @@
 import React from 'react';
 import { VapiWidget } from '@vapi-ai/client-sdk-react';
-import { getFloatingWidgetConfig } from '../config/vapi.config';
+import { getFloatingWidgetConfig } from '../../config/vapi.config';
 
 interface VapiFloatingWidgetProps {
   pageName: string;

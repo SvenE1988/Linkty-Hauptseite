@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, CheckCircle2 } from 'lucide-react';
-import { usePageTitle } from '../hooks/usePageTitle';
-import VapiInlineAssistant from '../components/VapiInlineAssistant';
-import CalendarModal from '../components/shared/CalendarModal';
-import PlaceholderHeader from '../components/shared/PlaceholderHeader';
-import SimpleLegalFooter from '../components/shared/SimpleLegalFooter';
+import { usePageTitle } from '../../hooks/usePageTitle';
+import VapiLazyWrapper from '../../components/vapi/VapiLazyWrapper';
+import CalendarModal from '../../components/shared/CalendarModal';
+import PlaceholderHeader from '../../components/shared/PlaceholderHeader';
+import SimpleLegalFooter from '../../components/shared/SimpleLegalFooter';
 
 const VoicePlaceholder: React.FC = () => {
   usePageTitle('Linkty Voice | KI-Telefonie für 100% Erreichbarkeit');
@@ -13,6 +13,7 @@ const VoicePlaceholder: React.FC = () => {
 
   return (
     <>
+      <VapiLazyWrapper pageName="Voice" />
       <CalendarModal
         isOpen={showCalendar}
         onClose={() => setShowCalendar(false)}
@@ -64,13 +65,6 @@ const VoicePlaceholder: React.FC = () => {
                 Klicken Sie auf den <span className="font-semibold text-voice-primary">türkisen Button rechts unten</span> auf der Seite, um ein echtes Gespräch mit unserem Voice-Agenten zu starten.
               </p>
             </div>
-          </div>
-        </section>
-
-        {/* Inline Voice Assistant Demo */}
-        <section className="pb-20 px-4">
-          <div className="max-w-5xl mx-auto">
-            <VapiInlineAssistant />
           </div>
         </section>
 
