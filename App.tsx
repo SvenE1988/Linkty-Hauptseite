@@ -1,28 +1,38 @@
-import React from 'react';
-import Hero from './components/Hero';
-import PinningSection from './components/PinningSection';
-import HorizontalScroll from './components/HorizontalScroll';
-import Footer from './components/Footer';
+import React, { lazy, Suspense } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import MainLandingPage from './components/MainLandingPage';
+
+const EngageApp = lazy(() => import('./pages/engage/EngageApp'));
+const VoicePlaceholder = lazy(() => import('./pages/VoicePlaceholder'));
+const StudioPlaceholder = lazy(() => import('./pages/StudioPlaceholder'));
+const SolutionsPlaceholder = lazy(() => import('./pages/SolutionsPlaceholder'));
+const ImpressumPage = lazy(() => import('./pages/ImpressumPage'));
+const DatenschutzPage = lazy(() => import('./pages/DatenschutzPage'));
+
+const LoadingFallback = () => (
+  <div className="min-h-screen flex items-center justify-center bg-brand-navy">
+    <div className="text-center">
+      <div className="w-16 h-16 border-4 border-brand-teal border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+      <p className="text-white font-semibold">Lädt...</p>
+    </div>
+  </div>
+);
 
 const App: React.FC = () => {
   return (
-    <div className="bg-brand-navy min-h-screen selection:bg-brand-teal selection:text-brand-navy">
-      {/* 
-        The main content wrapper. 
-        Relative z-10 ensures it scrolls OVER the fixed footer.
-      */}
-      <main className="relative z-10 bg-brand-navy mb-[60vh] shadow-2xl shadow-black/80">
-        <Hero />
-        <PinningSection />
-        <HorizontalScroll />
-        
-        {/* Spacer to ensure shadow visibility and clean break before footer */}
-        <div className="h-24 bg-brand-navy" />
-      </main>
-      
-      {/* Fixed Footer behind the content */}
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Suspense fallback={<LoadingFallback />}>
+        <Routes>
+          <Route path="/" element={<MainLandingPage />} />
+          <Route path="/engage/*" element={<EngageApp />} />
+          <Route path="/voice" element={<VoicePlaceholder />} />
+          <Route path="/studio" element={<StudioPlaceholder />} />
+          <Route path="/solutions" element={<SolutionsPlaceholder />} />
+          <Route path="/impressum" element={<ImpressumPage />} />
+          <Route path="/datenschutz" element={<DatenschutzPage />} />
+        </Routes>
+      </Suspense>
+    </BrowserRouter>
   );
 };
 
