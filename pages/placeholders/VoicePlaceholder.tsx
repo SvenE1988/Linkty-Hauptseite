@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, CheckCircle2 } from 'lucide-react';
 import { usePageTitle } from '../../hooks/usePageTitle';
@@ -10,6 +10,10 @@ import SimpleLegalFooter from '../../components/shared/SimpleLegalFooter';
 const VoicePlaceholder: React.FC = () => {
   usePageTitle('Linkty Voice | KI-Telefonie für 100% Erreichbarkeit');
   const [showCalendar, setShowCalendar] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
@@ -29,23 +33,34 @@ const VoicePlaceholder: React.FC = () => {
         />
 
         {/* Hero */}
-        <section className="pt-32 pb-12 px-4 relative">
-          <div className="absolute inset-0 bg-gradient-to-b from-white/95 to-white/98 z-0"></div>
+        <section className="pt-32 pb-12 px-4 relative min-h-[70vh] flex items-center">
+          {/* Hintergrundbild */}
+          <div className="absolute inset-0 z-0">
+            <img
+              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=60&w=1200&auto=format&fit=crop&dpr=2"
+              alt="Kommunikations-Wellenform und Audio-Visualisierung für KI-Telefonie"
+              loading="eager"
+              decoding="async"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
+          </div>
+
           <div className="max-w-5xl mx-auto text-center relative z-10">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-voice-accent/20 text-voice-primary rounded-full text-sm font-semibold mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-voice-accent/30 text-white border border-white/30 rounded-full text-sm font-semibold mb-8">
               <CheckCircle2 className="w-5 h-5" />
               Diese Dienstleistung ist bereits verfügbar
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-6 leading-tight">
+            <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
               Linkty Voice ist einsatzbereit – die Detailseite folgt in Kürze
             </h1>
 
-            <p className="text-2xl md:text-3xl text-gray-800 font-bold mb-6 drop-shadow-sm">
+            <p className="text-2xl md:text-3xl text-white font-bold mb-6 drop-shadow-lg">
               Gehen Sie ran, auch wenn Sie nicht da sind.
             </p>
 
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
+            <p className="text-xl text-gray-200 max-w-3xl mx-auto mb-12">
               KI-gestützte Telefonie für 100% Erreichbarkeit – ohne Personalengpass.
             </p>
           </div>

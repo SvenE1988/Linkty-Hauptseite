@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Zap, CheckCircle2 } from 'lucide-react';
 import { usePageTitle } from '../../hooks/usePageTitle';
@@ -10,6 +10,10 @@ import SimpleLegalFooter from '../../components/shared/SimpleLegalFooter';
 const SolutionsPlaceholder: React.FC = () => {
   usePageTitle('Linkty Solutions | Automatisierung & Lead-Scraping');
   const [showCalendar, setShowCalendar] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
@@ -29,23 +33,34 @@ const SolutionsPlaceholder: React.FC = () => {
         />
 
         {/* Hero */}
-        <section className="pt-32 pb-20 px-4 relative">
-          <div className="absolute inset-0 bg-gradient-to-b from-white/95 to-white/98 z-0"></div>
+        <section className="pt-32 pb-20 px-4 relative min-h-[70vh] flex items-center">
+          {/* Hintergrundbild */}
+          <div className="absolute inset-0 z-0">
+            <img
+              src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=60&w=1200&auto=format&fit=crop&dpr=2"
+              alt="Programmier-Code und technische Automatisierungslösungen"
+              loading="eager"
+              decoding="async"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
+          </div>
+
           <div className="max-w-5xl mx-auto text-center relative z-10">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-solutions-accent/20 text-solutions-primary rounded-full text-sm font-semibold mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-solutions-accent/30 text-white border border-white/30 rounded-full text-sm font-semibold mb-8">
               <CheckCircle2 className="w-5 h-5" />
               Technische Lösungen bereits im Einsatz
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-6 leading-tight">
+            <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
               Linkty Solutions ist produktiv – die Webseite wird aktualisiert
             </h1>
 
-            <p className="text-2xl md:text-3xl text-gray-800 font-bold mb-6 drop-shadow-sm">
+            <p className="text-2xl md:text-3xl text-white font-bold mb-6 drop-shadow-lg">
               Wir übernehmen die Fleißarbeit. Ihr Team macht den Umsatz.
             </p>
 
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-200 max-w-3xl mx-auto">
               Sonderprogrammierung, Lead-Scraping & Automatisierung für Vertriebsorganisationen.
             </p>
           </div>
