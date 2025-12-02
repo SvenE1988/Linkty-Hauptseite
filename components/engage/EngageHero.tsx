@@ -31,10 +31,6 @@ const EngageHero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-block px-4 py-2 bg-engage-teal/10 text-engage-primary border border-engage-teal/30 rounded-full text-sm font-semibold mb-6">
-              Für Versicherungsmakler & Finanzdienstleister
-            </div>
-
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-engage-primary leading-tight tracking-tight mb-6">
               Mehr Umsatz durch System.
               <br />

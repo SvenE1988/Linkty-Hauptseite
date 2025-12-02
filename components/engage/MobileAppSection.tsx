@@ -29,11 +29,11 @@ const MobileAppSection: React.FC = () => {
 
             <h2 className="text-4xl md:text-5xl font-extrabold text-engage-primary tracking-tight">
               Dein Pocket Office –<br />
-              <span className="text-engage-secondary">Der Maklertag in der Hand</span>
+              <span className="text-engage-secondary">Dein Business immer dabei</span>
             </h2>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              Ob beim Kunden vor Ort oder unterwegs – mit der Linkty Mobile App haben Sie Ihr komplettes CRM immer dabei. Bearbeiten Sie Leads, buchen Sie Termine und reagieren Sie sofort auf wichtige Events.
+              Ob im Außendienst oder unterwegs – mit der Linkty Mobile App haben Sie Ihr komplettes CRM immer dabei. Bearbeiten Sie Leads, buchen Sie Termine und reagieren Sie sofort auf wichtige Events.
             </p>
 
             <ul className="space-y-4">

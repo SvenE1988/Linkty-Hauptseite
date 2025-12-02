@@ -111,7 +111,7 @@ const StatsSection: React.FC = () => {
             <div className="w-12 h-12 bg-lime-100 rounded-xl flex items-center justify-center mb-4">
               <Users className="w-6 h-6 text-lime-600" />
             </div>
-            <CountUpStat end={200} suffix="+" label="Zufriedene Makler" />
+            <CountUpStat end={200} suffix="+" label="Zufriedene Kunden" />
           </motion.div>
 
           <motion.div
@@ -132,7 +132,7 @@ const StatsSection: React.FC = () => {
                   "Linkty hat unseren Vertrieb revolutioniert. Die Automatisierungen sparen uns jeden Tag Stunden, und unsere Conversion-Rate ist um 40% gestiegen."
                 </p>
                 <p className="text-sm text-gray-600 font-semibold">
-                  — Marcus Schneider, Versicherungsmakler
+                  — Sarah Weber, Geschäftsführerin Digitalberatung
                 </p>
               </div>
             </div>
@@ -180,7 +180,7 @@ const StatsSection: React.FC = () => {
             <div className="flex items-center justify-between">
               <div>
                 <h3 className="text-2xl md:text-3xl font-bold mb-2">White-Label Lösung</h3>
-                <p className="text-gray-800">Ergänzt perfekt Fondsfinanz, PWX und VEMA</p>
+                <p className="text-gray-800">Integriert sich nahtlos in Ihre bestehende Infrastruktur</p>
               </div>
               <div className="hidden md:flex items-center gap-3">
                 <div className="w-12 h-12 bg-white/30 rounded-full" />

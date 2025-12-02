@@ -3,14 +3,14 @@ import { motion } from 'framer-motion';
 import { Link2, Mail, MessageSquare, Calendar, Zap, Database, ShieldCheck } from 'lucide-react';
 
 const integrations = [
-  { name: 'VEMA', icon: ShieldCheck, color: 'text-lime-600', bgColor: 'bg-lime-100', featured: true },
-  { name: 'Fondsfinanz', icon: Database, color: 'text-engage-secondary', bgColor: 'bg-engage-secondary/10' },
-  { name: 'PWX', icon: Database, color: 'text-engage-teal', bgColor: 'bg-engage-teal/10' },
+  { name: 'Zapier', icon: Zap, color: 'text-orange-600', bgColor: 'bg-orange-100', featured: true },
   { name: 'WhatsApp', icon: MessageSquare, color: 'text-green-600', bgColor: 'bg-green-100' },
   { name: 'Gmail', icon: Mail, color: 'text-red-600', bgColor: 'bg-red-100' },
   { name: 'Outlook', icon: Mail, color: 'text-blue-600', bgColor: 'bg-blue-100' },
   { name: 'Google Calendar', icon: Calendar, color: 'text-blue-500', bgColor: 'bg-blue-100' },
-  { name: 'Zapier', icon: Zap, color: 'text-orange-600', bgColor: 'bg-orange-100' },
+  { name: 'Slack', icon: MessageSquare, color: 'text-purple-600', bgColor: 'bg-purple-100' },
+  { name: 'Mailchimp', icon: Mail, color: 'text-yellow-600', bgColor: 'bg-yellow-100' },
+  { name: 'HubSpot', icon: Database, color: 'text-orange-500', bgColor: 'bg-orange-50' },
 ];
 
 const IntegrationsSection: React.FC = () => {
@@ -76,7 +76,7 @@ const IntegrationsSection: React.FC = () => {
                     >
                       <div
                         className={`relative w-24 h-24 ${integration.bgColor} rounded-2xl shadow-lg hover:shadow-xl transition-all cursor-pointer flex items-center justify-center ${
-                          integration.featured ? 'ring-2 ring-lime-400 ring-offset-2' : ''
+                          integration.featured ? 'ring-2 ring-orange-400 ring-offset-2' : ''
                         }`}
                       >
                         <Icon className={`w-10 h-10 ${integration.color}`} />
@@ -109,7 +109,7 @@ const IntegrationsSection: React.FC = () => {
                         y1={radius + 100}
                         x2={x + radius + 100}
                         y2={y + radius + 100}
-                        stroke={integration.featured ? '#84cc16' : '#3973bf'}
+                        stroke={integration.featured ? '#f97316' : '#3973bf'}
                         strokeWidth="2"
                         strokeDasharray="4 4"
                         initial={{ pathLength: 0 }}
@@ -131,7 +131,7 @@ const IntegrationsSection: React.FC = () => {
                 <motion.div
                   key={index}
                   className={`${integration.bgColor} rounded-xl p-6 shadow-md ${
-                    integration.featured ? 'ring-2 ring-lime-400' : ''
+                    integration.featured ? 'ring-2 ring-orange-400' : ''
                   }`}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -154,7 +154,7 @@ const IntegrationsSection: React.FC = () => {
           transition={{ duration: 0.6 }}
         >
           <h3 className="text-2xl md:text-3xl font-bold mb-4">
-            Sie nutzen bereits ein MVP?
+            Sie nutzen bereits andere Systeme?
           </h3>
           <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
             Perfekt. Linkty Engage ergänzt Ihre bestehende Infrastruktur und macht daraus eine
