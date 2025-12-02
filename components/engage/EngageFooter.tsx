@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useCalendar } from '../../contexts/CalendarContext';
 
 const EngageFooter: React.FC = () => {
+  const { openCalendar } = useCalendar();
+
   return (
     <footer className="bg-engage-primary text-white">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -62,9 +65,12 @@ const EngageFooter: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <a href="#demo" className="text-gray-300 hover:text-white transition-colors">
+                <button
+                  onClick={openCalendar}
+                  className="text-gray-300 hover:text-white transition-colors cursor-pointer text-left"
+                >
                   Demo buchen
-                </a>
+                </button>
               </li>
               <li>
                 <a href="https://login.linkty.ai" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">

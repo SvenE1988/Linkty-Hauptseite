@@ -3,9 +3,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainLandingPage from './components/MainLandingPage';
 
 const EngageApp = lazy(() => import('./pages/engage/EngageApp'));
-const VoicePlaceholder = lazy(() => import('./pages/VoicePlaceholder'));
-const StudioPlaceholder = lazy(() => import('./pages/StudioPlaceholder'));
-const SolutionsPlaceholder = lazy(() => import('./pages/SolutionsPlaceholder'));
+const VoicePlaceholder = lazy(() => import('./pages/placeholders/VoicePlaceholder'));
+const StudioPlaceholder = lazy(() => import('./pages/placeholders/StudioPlaceholder'));
+const SolutionsPlaceholder = lazy(() => import('./pages/placeholders/SolutionsPlaceholder'));
 const ImpressumPage = lazy(() => import('./pages/ImpressumPage'));
 const DatenschutzPage = lazy(() => import('./pages/DatenschutzPage'));
 

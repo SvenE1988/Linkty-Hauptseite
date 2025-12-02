@@ -1,7 +1,7 @@
 import React from 'react';
 import { VapiWidget } from '@vapi-ai/client-sdk-react';
 import { Phone } from 'lucide-react';
-import { getInlineWidgetConfig } from '../config/vapi.config';
+import { getInlineWidgetConfig } from '../../config/vapi.config';
 
 const VapiInlineAssistant: React.FC = () => {
   const config = getInlineWidgetConfig();

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import { useCalendar } from '../../contexts/CalendarContext';
 
 const EngageHeader: React.FC = () => {
+  const { openCalendar } = useCalendar();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [softwareDropdownOpen, setSoftwareDropdownOpen] = useState(false);
   const [kiDropdownOpen, setKiDropdownOpen] = useState(false);
@@ -118,12 +120,12 @@ const EngageHeader: React.FC = () => {
             >
               Portalzugang
             </a>
-            <a
-              href="#demo"
+            <button
+              onClick={openCalendar}
               className="px-6 py-2 bg-engage-accent text-white font-semibold rounded-lg hover:bg-engage-accent/90 transition-all shadow-md hover:shadow-lg"
             >
               Demo buchen
-            </a>
+            </button>
           </nav>
 
           <button

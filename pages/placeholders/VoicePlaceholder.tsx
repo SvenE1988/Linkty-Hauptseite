@@ -1,25 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, CheckCircle2 } from 'lucide-react';
-import { usePageTitle } from '../hooks/usePageTitle';
-import VapiInlineAssistant from '../components/VapiInlineAssistant';
-import CalendarModal from '../components/shared/CalendarModal';
-import PlaceholderHeader from '../components/shared/PlaceholderHeader';
-import SimpleLegalFooter from '../components/shared/SimpleLegalFooter';
+import { usePageTitle } from '../../hooks/usePageTitle';
+import VapiLazyWrapper from '../../components/vapi/VapiLazyWrapper';
+import CalendarModal from '../../components/shared/CalendarModal';
+import PlaceholderHeader from '../../components/shared/PlaceholderHeader';
+import SimpleLegalFooter from '../../components/shared/SimpleLegalFooter';
 
 const VoicePlaceholder: React.FC = () => {
   usePageTitle('Linkty Voice | KI-Telefonie für 100% Erreichbarkeit');
   const [showCalendar, setShowCalendar] = useState(false);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
+      <VapiLazyWrapper pageName="Voice" />
       <CalendarModal
         isOpen={showCalendar}
         onClose={() => setShowCalendar(false)}
         iframeId="EAqjBUlT5vgXjUg1UxFG_voice"
       />
 
-      <main className="min-h-screen bg-gradient-to-b from-voice-accent/10 to-white" role="main">
+      <main className="min-h-screen bg-white" role="main">
         <PlaceholderHeader
           logoSrc="https://storage.googleapis.com/msgsndr/Av3P0jZ2jSTK0YnBojKR/media/692a88bf1f60a17cede8d00c.png"
           logoAlt="Linkty Voice Logo - KI-gestützte Telefonie"
@@ -28,63 +33,68 @@ const VoicePlaceholder: React.FC = () => {
         />
 
         {/* Hero */}
-        <section className="pt-32 pb-12 px-4 relative">
-          <div className="absolute inset-0 bg-gradient-to-b from-white/95 to-white/98 z-0"></div>
+        <section className="pt-32 pb-12 px-4 relative min-h-[70vh] flex items-center">
+          {/* Hintergrundbild */}
+          <div className="absolute inset-0 z-0">
+            <img
+              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=60&w=1200&auto=format&fit=crop&dpr=2"
+              alt="Kommunikations-Wellenform und Audio-Visualisierung für KI-Telefonie"
+              loading="eager"
+              decoding="async"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
+          </div>
+
           <div className="max-w-5xl mx-auto text-center relative z-10">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-voice-accent/20 text-voice-primary rounded-full text-sm font-semibold mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-voice-accent/30 text-white border border-white/30 rounded-full text-sm font-semibold mb-8">
               <CheckCircle2 className="w-5 h-5" />
               Diese Dienstleistung ist bereits verfügbar
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-6 leading-tight">
+            <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
               Linkty Voice ist einsatzbereit – die Detailseite folgt in Kürze
             </h1>
 
-            <p className="text-2xl md:text-3xl text-gray-800 font-bold mb-6 drop-shadow-sm">
+            <p className="text-2xl md:text-3xl text-white font-bold mb-6 drop-shadow-lg">
               Gehen Sie ran, auch wenn Sie nicht da sind.
             </p>
 
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
+            <p className="text-xl text-gray-200 max-w-3xl mx-auto mb-12">
               KI-gestützte Telefonie für 100% Erreichbarkeit – ohne Personalengpass.
             </p>
           </div>
         </section>
 
-        {/* Visual Hint for Floating Widget */}
+        {/* Kombinierte Kachel: Einsatzbereit + Live-Test */}
         <section className="pb-8 px-4">
           <div className="max-w-5xl mx-auto">
-            <div className="bg-gradient-to-r from-voice-primary/10 to-voice-accent/10 border-2 border-voice-accent rounded-xl p-6 text-center shadow-lg">
-              <div className="flex items-center justify-center gap-3 mb-2">
-                <Phone className="w-6 h-6 text-voice-primary" />
-                <p className="text-lg md:text-xl font-bold text-voice-primary">
-                  Live-Test verfügbar!
-                </p>
-              </div>
-              <p className="text-base md:text-lg text-gray-700">
-                Klicken Sie auf den <span className="font-semibold text-voice-primary">türkisen Button rechts unten</span> auf der Seite, um ein echtes Gespräch mit unserem Voice-Agenten zu starten.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Inline Voice Assistant Demo */}
-        <section className="pb-20 px-4">
-          <div className="max-w-5xl mx-auto">
-            <VapiInlineAssistant />
-          </div>
-        </section>
-
-        {/* Main Content */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-br from-voice-primary to-voice-accent text-white rounded-2xl p-8 md:p-12 mb-16">
+            <div className="bg-gradient-to-br from-voice-primary to-voice-accent text-white rounded-2xl p-8 md:p-12 shadow-2xl">
               <div className="flex items-center gap-3 mb-6">
                 <Phone className="w-8 h-8" />
                 <h2 className="text-3xl md:text-4xl font-bold">
                   Diese Dienstleistung ist schon heute für Sie einsatzbereit
                 </h2>
               </div>
+
+              <div className="mt-8 bg-white/10 backdrop-blur-sm border border-white/30 rounded-xl p-6 text-center">
+                <div className="flex items-center justify-center gap-3 mb-3">
+                  <Phone className="w-6 h-6 text-white" />
+                  <p className="text-xl md:text-2xl font-bold text-white">
+                    Live-Test verfügbar!
+                  </p>
+                </div>
+                <p className="text-base md:text-lg text-white/90 leading-relaxed">
+                  Klicken Sie auf den <span className="font-bold text-white">türkisen Button rechts unten</span> auf der Seite, um ein echtes Gespräch mit unserem Voice-Agenten zu starten und die Technologie selbst zu erleben.
+                </p>
+              </div>
             </div>
+          </div>
+        </section>
+
+        {/* Main Content */}
+        <section className="py-16 px-4 bg-white">
+          <div className="max-w-4xl mx-auto">
 
             {/* Das Problem */}
             <div className="mb-12">
