@@ -1,27 +1,21 @@
 import React from 'react';
 import { usePageTitle } from '../../hooks/usePageTitle';
 import EngageHero from '../../components/engage/EngageHero';
-import FlowDiagram from '../../components/engage/FlowDiagram';
-import AudienceSplit from '../../components/engage/AudienceSplit';
-import MobileAppSection from '../../components/engage/MobileAppSection';
-import AutomationSection from '../../components/engage/AutomationSection';
-import CRMSection from '../../components/engage/CRMSection';
+import CoreFeatures from '../../components/engage/CoreFeatures';
+import ValueProposition from '../../components/engage/ValueProposition';
 import StatsSection from '../../components/engage/StatsSection';
 import IntegrationsSection from '../../components/engage/IntegrationsSection';
 import TestimonialsSection from '../../components/engage/TestimonialsSection';
 import FinalCTA from '../../components/engage/FinalCTA';
 
 const EngageLanding: React.FC = () => {
-  usePageTitle('Linkty | Engage - Mehr Umsatz durch System, nicht durch Zufall');
+  usePageTitle('Linkty | Engage - CRM für Versicherungsmakler & Finanzdienstleister');
 
   return (
-    <div className="relative">
+    <div>
       <EngageHero />
-      <FlowDiagram />
-      <AudienceSplit />
-      <MobileAppSection />
-      <AutomationSection />
-      <CRMSection />
+      <CoreFeatures />
+      <ValueProposition />
       <StatsSection />
       <IntegrationsSection />
       <TestimonialsSection />
