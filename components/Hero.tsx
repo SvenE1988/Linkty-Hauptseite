@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
           className="absolute inset-0 z-0 flex items-center justify-center"
         >
            <video
-            src="https://storage.googleapis.com/msgsndr/Av3P0jZ2jSTK0YnBojKR/media/692f1b4e2b865e7556612405.mp4"
+            src="https://storage.googleapis.com/msgsndr/Av3P0jZ2jSTK0YnBojKR/media/692f4350fd073a071fe61edf.mp4"
             poster="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=60&w=1200&auto=format&fit=crop&dpr=2"
             autoPlay
             loop
