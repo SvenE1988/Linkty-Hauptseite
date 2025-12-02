@@ -11,7 +11,8 @@
     ],
     "skipLibCheck": true,
     "types": [
-      "node"
+      "node",
+      "./vapi.d.ts"
     ],
     "moduleResolution": "bundler",
     "isolatedModules": true,

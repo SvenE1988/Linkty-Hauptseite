@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Palette, CheckCircle2 } from 'lucide-react';
 import { usePageTitle } from '../hooks/usePageTitle';
+import VapiFloatingWidget from '../components/VapiFloatingWidget';
 
 const StudioPlaceholder: React.FC = () => {
   usePageTitle('Linkty Studio | Full-Service Digital Marketing');
@@ -9,6 +10,7 @@ const StudioPlaceholder: React.FC = () => {
 
   return (
     <>
+      <VapiFloatingWidget accentColor="#4a7c8a" pageName="Studio" />
       {showCalendar && (
         <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-2 sm:p-4" onClick={() => setShowCalendar(false)}>
           <div className="bg-white rounded-lg w-full max-w-5xl max-h-[95vh] overflow-auto relative" onClick={(e) => e.stopPropagation()}>

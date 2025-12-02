@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, CheckCircle2 } from 'lucide-react';
 import { usePageTitle } from '../hooks/usePageTitle';
+import VapiInlineAssistant from '../components/VapiInlineAssistant';
 
 const VoicePlaceholder: React.FC = () => {
   usePageTitle('Linkty Voice | KI-Telefonie für 100% Erreichbarkeit');
@@ -67,7 +68,7 @@ const VoicePlaceholder: React.FC = () => {
         </header>
 
         {/* Hero */}
-        <section className="pt-32 pb-20 px-4 relative">
+        <section className="pt-32 pb-12 px-4 relative">
           <div className="absolute inset-0 bg-gradient-to-b from-white/95 to-white/98 z-0"></div>
           <div className="max-w-5xl mx-auto text-center relative z-10">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-voice-accent/20 text-voice-primary rounded-full text-sm font-semibold mb-8">
@@ -83,9 +84,16 @@ const VoicePlaceholder: React.FC = () => {
               Gehen Sie ran, auch wenn Sie nicht da sind.
             </p>
 
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
               KI-gestützte Telefonie für 100% Erreichbarkeit – ohne Personalengpass.
             </p>
+          </div>
+        </section>
+
+        {/* Inline Voice Assistant Demo */}
+        <section className="pb-20 px-4">
+          <div className="max-w-5xl mx-auto">
+            <VapiInlineAssistant />
           </div>
         </section>
 
