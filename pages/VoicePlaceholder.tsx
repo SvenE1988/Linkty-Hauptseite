@@ -90,6 +90,23 @@ const VoicePlaceholder: React.FC = () => {
           </div>
         </section>
 
+        {/* Visual Hint for Floating Widget */}
+        <section className="pb-8 px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="bg-gradient-to-r from-voice-primary/10 to-voice-accent/10 border-2 border-voice-accent rounded-xl p-6 text-center shadow-lg">
+              <div className="flex items-center justify-center gap-3 mb-2">
+                <Phone className="w-6 h-6 text-voice-primary" />
+                <p className="text-lg md:text-xl font-bold text-voice-primary">
+                  Live-Test verfügbar!
+                </p>
+              </div>
+              <p className="text-base md:text-lg text-gray-700">
+                Klicken Sie auf den <span className="font-semibold text-voice-primary">türkisen Button rechts unten</span> auf der Seite, um ein echtes Gespräch mit unserem Voice-Agenten zu starten.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Inline Voice Assistant Demo */}
         <section className="pb-20 px-4">
           <div className="max-w-5xl mx-auto">

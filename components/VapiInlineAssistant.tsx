@@ -18,8 +18,8 @@ const VapiInlineAssistant: React.FC = () => {
         </h2>
 
         <p className="text-xl text-white/90 mb-6 max-w-2xl">
-          Erleben Sie KI-gestützte Telefonie in Echtzeit. Klicken Sie auf den Button unten und starten Sie ein
-          Gespräch mit unserem Voice Agent – kostenlos und unverbindlich.
+          Erleben Sie KI-gestützte Telefonie in Echtzeit. Klicken Sie auf den türkisen Voice-Button rechts unten
+          auf der Seite und starten Sie ein Gespräch mit unserem Voice Agent – kostenlos und unverbindlich.
         </p>
       </div>
 
