@@ -156,7 +156,7 @@ const SolutionsPlaceholder: React.FC = () => {
             </div>
 
             <p className="text-center text-gray-600 mt-8">
-              Oder direkt per E-Mail anfragen: <a href="mailto:solutions@linkty.de" className="text-solutions-accent hover:underline font-semibold">solutions@linkty.de</a>
+              Oder direkt per E-Mail anfragen: <a href="mailto:solutions@linkty.ai" className="text-solutions-accent hover:underline font-semibold">solutions@linkty.de</a>
             </p>
           </div>
         </section>
