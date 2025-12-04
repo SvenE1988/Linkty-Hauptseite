@@ -88,7 +88,7 @@ export const datenschutzSections = [
               <br />
               Telefon: +49 721 95279401
               <br />
-              E-Mail: info@linkty.de
+              E-Mail: info@linkty.ai
             </p>
             <p>
               Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder
