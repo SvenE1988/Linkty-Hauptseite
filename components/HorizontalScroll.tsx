@@ -57,7 +57,7 @@ const HorizontalScroll: React.FC = () => {
   const x = useTransform(scrollYProgress, [0, 1], ["1%", "-85%"]);
 
   return (
-    <section ref={targetRef} className="relative h-[400vh] bg-brand-navy">
+    <section ref={targetRef} className="relative h-[250vh] md:h-[300vh] lg:h-[350vh] bg-brand-navy">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
         
         {/* Section Title */}
