@@ -26,12 +26,12 @@ const EngageHero: React.FC = () => {
               Für Versicherungsmakler & Finanzdienstleister
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-playfair font-bold text-white leading-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-playfair font-bold text-white leading-tight">
               Vom Verwalter zum{' '}
               <span className="text-engage-teal">Vertriebsmotor</span>
             </h1>
 
-            <p className="text-base sm:text-lg md:text-xl text-gray-200 leading-relaxed">
+            <p className="text-xl text-gray-200 leading-relaxed">
               Ihr MVP verwaltet Akten. Linkty aktiviert Menschen. Verwandeln Sie Ihre bestehende
               Datenbank in eine aktive Verkaufsmaschine mit automatisierten Follow-ups und
               intelligenten Workflows.
@@ -61,15 +61,15 @@ const EngageHero: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <button
                 onClick={openCalendar}
-                className="w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-engage-accent text-white font-semibold rounded-lg hover:bg-engage-accent/90 transition-all shadow-lg hover:shadow-xl group min-h-[48px]"
+                className="inline-flex items-center justify-center px-8 py-4 bg-engage-accent text-white font-semibold rounded-lg hover:bg-engage-accent/90 transition-all shadow-lg hover:shadow-xl group min-h-[44px]"
                 aria-label="Jetzt Demo-Termin buchen"
               >
                 Jetzt Demo buchen
-                <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </button>
               <a
                 href="#features"
-                className="w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-white text-engage-primary font-semibold rounded-lg border-2 border-engage-primary hover:bg-engage-primary hover:text-white transition-all min-h-[48px]"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white text-engage-primary font-semibold rounded-lg border-2 border-engage-primary hover:bg-engage-primary hover:text-white transition-all min-h-[44px]"
                 aria-label="Mehr über Linkty Engage erfahren"
               >
                 Mehr erfahren
