@@ -155,7 +155,7 @@ const StudioPlaceholder: React.FC = () => {
             </div>
 
             <p className="text-center text-gray-600 mt-8">
-              Oder direkt anfragen: <a href="mailto:studio@linkty.ai" className="text-studio-accent hover:underline font-semibold">studio@linkty.de</a>
+              Oder direkt anfragen: <a href="mailto:studio@linkty.ai" className="text-studio-accent hover:underline font-semibold">studio@linkty.ai</a>
             </p>
           </div>
         </section>
