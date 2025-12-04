@@ -8,7 +8,7 @@ const EngageFooter: React.FC = () => {
   return (
     <footer className="bg-engage-primary text-white">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-8">
           <div>
             <h3 className="text-lg font-bold mb-4 text-engage-accent">Software</h3>
             <ul className="space-y-2">
