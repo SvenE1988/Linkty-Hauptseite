@@ -70,7 +70,7 @@ const HorizontalScroll: React.FC = () => {
         <motion.div style={{ x }} className="flex gap-8 pl-8 md:pl-20 items-center">
           {/* Introductory Text Card */}
           <div className="min-w-[300px] md:min-w-[400px] text-white pr-10">
-            <h3 className="text-2xl sm:text-3xl font-bold mb-4 text-brand-teal">Unser Ökosystem.</h3>
+            <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-brand-teal">Unser Ökosystem.</h3>
             <p className="text-slate-400 text-base sm:text-lg">
               Vier spezialisierte Einheiten, eine Mission: Ihr Unternehmen digital nach vorne zu bringen. Wischen Sie, um Lösungen zu entdecken.
             </p>

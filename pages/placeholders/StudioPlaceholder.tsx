@@ -52,15 +52,15 @@ const StudioPlaceholder: React.FC = () => {
               Unser komplettes Leistungsspektrum steht zur Verfügung
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black text-white mb-6 leading-tight">
               Linkty Studio ist bereits für Sie da – die Webseite wird gerade überarbeitet
             </h1>
 
-            <p className="text-2xl md:text-3xl text-white font-bold mb-6 drop-shadow-lg">
+            <p className="text-xl sm:text-2xl md:text-3xl text-white font-bold mb-6 drop-shadow-lg">
               Ihr kompletter Außenauftritt: Von der Webseite bis zum täglichen Post.
             </p>
 
-            <p className="text-xl text-gray-200 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-200 max-w-3xl mx-auto">
               Full-Service-Agentur für digitale Sichtbarkeit und Kundengewinnung.
             </p>
           </div>
@@ -69,10 +69,10 @@ const StudioPlaceholder: React.FC = () => {
         {/* Main Content */}
         <section className="py-16 px-4 bg-white">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-br from-studio-primary to-studio-accent text-white rounded-2xl p-8 md:p-12 mb-16">
+            <div className="bg-gradient-to-br from-studio-primary to-studio-accent text-white rounded-2xl p-6 sm:p-8 md:p-12 mb-16">
               <div className="flex items-center gap-3 mb-6">
-                <Palette className="w-8 h-8" />
-                <h2 className="text-3xl md:text-4xl font-bold">
+                <Palette className="w-6 h-6 sm:w-8 sm:h-8" />
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
                   Unser komplettes Leistungsspektrum steht Ihnen heute schon zur Verfügung
                 </h2>
               </div>
@@ -111,7 +111,7 @@ const StudioPlaceholder: React.FC = () => {
             {/* Leistungsübersicht */}
             <div className="mb-12">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Was Linkty Studio für Sie leistet</h3>
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid sm:grid-cols-2 gap-4">
                 {[
                   'Moderne, conversion-optimierte Webseiten',
                   'Professionelle Foto- & Videoproduktion',
@@ -121,7 +121,7 @@ const StudioPlaceholder: React.FC = () => {
                   'Auf Ihre Branche zugeschnitten'
                 ].map((feature, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-6 h-6 text-studio-accent flex-shrink-0 mt-1" />
+                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-studio-accent flex-shrink-0 mt-1" />
                     <span className="text-gray-700 text-lg">{feature}</span>
                   </div>
                 ))}
@@ -139,16 +139,16 @@ const StudioPlaceholder: React.FC = () => {
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-col md:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={() => setShowCalendar(true)}
-                className="px-10 py-4 bg-studio-primary text-white font-bold rounded-lg hover:bg-studio-accent transition-all shadow-lg transform hover:-translate-y-1"
+                className="w-full sm:w-auto px-6 sm:px-10 py-3 sm:py-4 min-h-[48px] bg-studio-primary text-white font-bold rounded-lg hover:bg-studio-accent transition-all shadow-lg transform hover:-translate-y-1"
               >
                 Kostenlose Erstberatung buchen
               </button>
               <button
                 onClick={() => setShowCalendar(true)}
-                className="px-10 py-4 border-2 border-studio-primary text-studio-primary font-bold rounded-lg hover:bg-studio-accent/10 transition-all"
+                className="w-full sm:w-auto px-6 sm:px-10 py-3 sm:py-4 min-h-[48px] border-2 border-studio-primary text-studio-primary font-bold rounded-lg hover:bg-studio-accent/10 transition-all"
               >
                 Referenzen & Portfolio ansehen
               </button>

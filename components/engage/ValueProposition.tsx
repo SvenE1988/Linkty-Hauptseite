@@ -44,7 +44,7 @@ const ValueProposition: React.FC = () => {
             return (
               <div
                 key={index}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center ${
                   section.reverse ? 'lg:grid-flow-dense' : ''
                 }`}
               >
@@ -58,11 +58,11 @@ const ValueProposition: React.FC = () => {
                     </span>
                   </div>
 
-                  <h2 className="text-4xl md:text-5xl font-playfair font-bold text-engage-primary mb-6 leading-tight">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-playfair font-bold text-engage-primary mb-6 leading-tight">
                     {section.title}
                   </h2>
 
-                  <p className="text-lg text-gray-600 leading-relaxed border-l-4 border-engage-teal pl-6">
+                  <p className="text-base sm:text-lg text-gray-600 leading-relaxed border-l-4 border-engage-teal pl-6">
                     {section.description}
                   </p>
                 </div>

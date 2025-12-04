@@ -17,7 +17,7 @@ const MainLandingPage: React.FC = () => {
         <HorizontalScroll />
 
         {/* Spacer to ensure shadow visibility and clean break before footer */}
-        <div className="h-24 bg-brand-navy" />
+        <div className="h-12 sm:h-16 md:h-20 lg:h-24 bg-brand-navy" />
       </main>
 
       {/* Fixed Footer behind the content */}

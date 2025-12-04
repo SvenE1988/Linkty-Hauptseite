@@ -144,31 +144,31 @@ const EngageHeader: React.FC = () => {
           <div className="px-4 py-4 space-y-3">
             <div className="space-y-2">
               <div className="font-semibold text-engage-primary text-sm">Software</div>
-              <Link to="/engage/crm" className="block pl-4 py-2 text-sm text-gray-700 hover:bg-engage-surface rounded">
+              <Link to="/engage/crm" className="block pl-4 py-3 min-h-[48px] flex items-center text-sm text-gray-700 hover:bg-engage-surface rounded">
                 CRM
               </Link>
-              <Link to="/engage/kommunikation" className="block pl-4 py-2 text-sm text-gray-700 hover:bg-engage-surface rounded">
+              <Link to="/engage/kommunikation" className="block pl-4 py-3 min-h-[48px] flex items-center text-sm text-gray-700 hover:bg-engage-surface rounded">
                 Kommunikation
               </Link>
-              <Link to="/engage/marketing" className="block pl-4 py-2 text-sm text-gray-700 hover:bg-engage-surface rounded">
+              <Link to="/engage/marketing" className="block pl-4 py-3 min-h-[48px] flex items-center text-sm text-gray-700 hover:bg-engage-surface rounded">
                 Marketing
               </Link>
-              <Link to="/engage/team" className="block pl-4 py-2 text-sm text-gray-700 hover:bg-engage-surface rounded">
+              <Link to="/engage/team" className="block pl-4 py-3 min-h-[48px] flex items-center text-sm text-gray-700 hover:bg-engage-surface rounded">
                 Team
               </Link>
             </div>
 
             <div className="space-y-2">
               <div className="font-semibold text-engage-primary text-sm">KI & Automation</div>
-              <Link to="/engage/voice" className="block pl-4 py-2 text-sm text-gray-700 hover:bg-engage-surface rounded">
+              <Link to="/engage/voice" className="block pl-4 py-3 min-h-[48px] flex items-center text-sm text-gray-700 hover:bg-engage-surface rounded">
                 Linkty Voice
               </Link>
-              <Link to="/engage/workflows" className="block pl-4 py-2 text-sm text-gray-700 hover:bg-engage-surface rounded">
+              <Link to="/engage/workflows" className="block pl-4 py-3 min-h-[48px] flex items-center text-sm text-gray-700 hover:bg-engage-surface rounded">
                 Workflows
               </Link>
             </div>
 
-            <Link to="/engage/ressourcen" className="block py-2 text-sm text-gray-700 hover:bg-engage-surface rounded font-medium">
+            <Link to="/engage/ressourcen" className="block py-3 min-h-[48px] flex items-center text-sm text-gray-700 hover:bg-engage-surface rounded font-medium">
               Ressourcen
             </Link>
 
@@ -176,16 +176,16 @@ const EngageHeader: React.FC = () => {
               href="https://login.linkty.ai"
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-center px-6 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-all"
+              className="block text-center px-6 py-3 min-h-[48px] flex items-center justify-center border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-all"
             >
               Portalzugang
             </a>
-            <a
-              href="#demo"
-              className="block text-center px-6 py-3 bg-engage-accent text-white font-semibold rounded-lg hover:bg-engage-accent/90 transition-all"
+            <button
+              onClick={openCalendar}
+              className="block text-center w-full px-6 py-3 min-h-[48px] flex items-center justify-center bg-engage-accent text-white font-semibold rounded-lg hover:bg-engage-accent/90 transition-all"
             >
               Demo buchen
-            </a>
+            </button>
           </div>
         </div>
       )}

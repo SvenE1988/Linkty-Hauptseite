@@ -52,15 +52,15 @@ const SolutionsPlaceholder: React.FC = () => {
               Technische Lösungen bereits im Einsatz
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black text-white mb-6 leading-tight">
               Linkty Solutions ist produktiv – die Webseite wird aktualisiert
             </h1>
 
-            <p className="text-2xl md:text-3xl text-white font-bold mb-6 drop-shadow-lg">
+            <p className="text-xl sm:text-2xl md:text-3xl text-white font-bold mb-6 drop-shadow-lg">
               Wir übernehmen die Fleißarbeit. Ihr Team macht den Umsatz.
             </p>
 
-            <p className="text-xl text-gray-200 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-200 max-w-3xl mx-auto">
               Sonderprogrammierung, Lead-Scraping & Automatisierung für Vertriebsorganisationen.
             </p>
           </div>
@@ -69,10 +69,10 @@ const SolutionsPlaceholder: React.FC = () => {
         {/* Main Content */}
         <section className="py-16 px-4 bg-white">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-br from-solutions-primary to-solutions-accent text-white rounded-2xl p-8 md:p-12 mb-16">
+            <div className="bg-gradient-to-br from-solutions-primary to-solutions-accent text-white rounded-2xl p-6 sm:p-8 md:p-12 mb-16">
               <div className="flex items-center gap-3 mb-6">
-                <Zap className="w-8 h-8" />
-                <h2 className="text-3xl md:text-4xl font-bold">
+                <Zap className="w-6 h-6 sm:w-8 sm:h-8" />
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
                   Technische Lösungen, die schon heute Ihre Prozesse vereinfachen
                 </h2>
               </div>
@@ -112,7 +112,7 @@ const SolutionsPlaceholder: React.FC = () => {
             {/* Was wir automatisieren */}
             <div className="mb-12">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Was wir für Sie automatisieren</h3>
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid sm:grid-cols-2 gap-4">
                 {[
                   'Intelligentes Lead-Scraping & Datenaufbereitung',
                   'Technische Verbindungen zwischen Systemen',
@@ -122,7 +122,7 @@ const SolutionsPlaceholder: React.FC = () => {
                   'Manuelle Fleißarbeit wird digital erledigt'
                 ].map((feature, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-6 h-6 text-solutions-accent flex-shrink-0 mt-1" />
+                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-solutions-accent flex-shrink-0 mt-1" />
                     <span className="text-gray-700 text-lg">{feature}</span>
                   </div>
                 ))}
@@ -140,16 +140,16 @@ const SolutionsPlaceholder: React.FC = () => {
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-col md:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={() => setShowCalendar(true)}
-                className="px-10 py-4 bg-solutions-primary text-white font-bold rounded-lg hover:bg-solutions-accent transition-all shadow-lg transform hover:-translate-y-1"
+                className="w-full sm:w-auto px-6 sm:px-10 py-3 sm:py-4 min-h-[48px] bg-solutions-primary text-white font-bold rounded-lg hover:bg-solutions-accent transition-all shadow-lg transform hover:-translate-y-1"
               >
                 Analyse-Gespräch vereinbaren
               </button>
               <button
                 onClick={() => setShowCalendar(true)}
-                className="px-10 py-4 border-2 border-solutions-primary text-solutions-primary font-bold rounded-lg hover:bg-solutions-accent/10 transition-all"
+                className="w-full sm:w-auto px-6 sm:px-10 py-3 sm:py-4 min-h-[48px] border-2 border-solutions-primary text-solutions-primary font-bold rounded-lg hover:bg-solutions-accent/10 transition-all"
               >
                 Use Cases & Beispiele ansehen
               </button>

@@ -60,7 +60,7 @@ const PinningSection: React.FC = () => {
 
         {/* Scrolling Text Content */}
         <div className="xl:w-1/2 relative z-10 flex flex-col justify-center bg-brand-navy/50 backdrop-blur-sm">
-           <div className="min-h-screen flex flex-col justify-center gap-60 py-40 px-8 md:px-20">
+           <div className="min-h-screen flex flex-col justify-center gap-24 md:gap-40 lg:gap-60 py-20 md:py-32 lg:py-40 px-8 md:px-20">
               {coreValues.map((value, index) => (
                 <FeatureBlock key={index} value={value} index={index} />
               ))}
@@ -83,10 +83,10 @@ const FeatureBlock: React.FC<{ value: any; index: number }> = ({ value, index })
       <span className={`text-sm font-bold tracking-widest uppercase mb-2 block ${value.color}`}>
         {value.kicker}
       </span>
-      <h3 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+      <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
         {value.title}
       </h3>
-      <p className="text-slate-400 text-lg leading-relaxed max-w-md">
+      <p className="text-slate-400 text-base sm:text-lg leading-relaxed max-w-md">
         {value.description}
       </p>
     </motion.div>

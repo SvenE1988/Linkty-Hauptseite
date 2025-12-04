@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mt-12 sm:mt-16 md:mt-20 text-sm font-semibold tracking-wide border-t border-white/10 pt-8 sm:pt-10">
+        <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mt-10 sm:mt-12 md:mt-16 lg:mt-20 text-sm font-semibold tracking-wide border-t border-white/10 pt-8 sm:pt-10">
           <div className="flex flex-col gap-2 opacity-70 hover:opacity-100 transition-opacity">
             <span className="text-brand-teal uppercase text-xs mb-1">CRM</span>
             <Link to="/engage">Linkty Engage</Link>
