@@ -28,23 +28,13 @@ const Hero: React.FC = () => {
           style={{ scale: imageScale, opacity: imageOpacity }}
           className="absolute inset-0 z-0 flex items-center justify-center"
         >
-           <video
-            src="https://storage.googleapis.com/msgsndr/Av3P0jZ2jSTK0YnBojKR/media/692f4350fd073a071fe61edf.mp4"
-            poster="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=60&w=1200&auto=format&fit=crop&dpr=2"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="none"
-            aria-label="Animiertes Hintergrundvideo mit bewegtem Globus und digitalen Verbindungen"
-            className="w-full h-full object-cover opacity-100 transition-all duration-1000 hidden md:block motion-reduce:hidden"
-          />
+           {/* Using a tech-abstract image */}
            <img
             src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=60&w=1200&auto=format&fit=crop&dpr=2"
             alt="Abstraktes digitales Netzwerk mit leuchtenden Verbindungen und globaler Technologie-Visualisierung"
             loading="eager"
             decoding="async"
-            className="w-full h-full object-cover opacity-100 transition-all duration-1000 md:hidden md:motion-reduce:block"
+            className="w-full h-full object-cover opacity-100 transition-all duration-1000"
           />
            {/* **VERBESSERT: Dunkles Overlay von /30 auf /15 reduziert** */}
            <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/15 to-transparent" />
@@ -59,13 +49,13 @@ const Hero: React.FC = () => {
         >
           <div className="flex items-center justify-center gap-4 mb-4">
              {/* Logo representation */}
-             <div className="w-10 h-10 sm:w-12 sm:h-12 border-3 sm:border-4 border-brand-teal rounded-lg transform rotate-45" />
-             <div className="w-10 h-10 sm:w-12 sm:h-12 border-3 sm:border-4 border-brand-blue rounded-lg transform rotate-45 -ml-6 sm:-ml-8 mix-blend-screen" />
+             <div className="w-12 h-12 border-4 border-brand-teal rounded-lg transform rotate-45" />
+             <div className="w-12 h-12 border-4 border-brand-blue rounded-lg transform rotate-45 -ml-8 mix-blend-screen" />
           </div>
-          <h1 className="text-[clamp(3rem,12vw,10rem)] sm:text-[10vw] md:text-[12vw] lg:text-[10vw] leading-none font-sans font-black text-transparent bg-clip-text bg-gradient-to-br from-brand-teal via-white to-brand-blue tracking-tighter">
+          <h1 className="text-[12vw] sm:text-[10vw] md:text-[12vw] lg:text-[10vw] leading-none font-sans font-black text-transparent bg-clip-text bg-gradient-to-br from-brand-teal via-white to-brand-blue tracking-tighter">
             LINKTY
           </h1>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-light text-brand-teal/80 mt-2 tracking-[0.3em] uppercase">
+          <p className="text-lg md:text-2xl font-light text-brand-teal/80 mt-2 tracking-[0.3em] uppercase">
             Verbinden. Automatisieren. Wachsen.
           </p>
         </motion.div>

@@ -62,7 +62,7 @@ const HorizontalScroll: React.FC = () => {
         
         {/* Section Title */}
         <div className="absolute top-8 left-8 z-10">
-             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white/10 tracking-tighter uppercase">
+             <h2 className="text-4xl md:text-6xl font-bold text-white/10 tracking-tighter uppercase">
                Bereiche
              </h2>
         </div>
@@ -70,8 +70,8 @@ const HorizontalScroll: React.FC = () => {
         <motion.div style={{ x }} className="flex gap-8 pl-8 md:pl-20 items-center">
           {/* Introductory Text Card */}
           <div className="min-w-[300px] md:min-w-[400px] text-white pr-10">
-            <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-brand-teal">Unser Ökosystem.</h3>
-            <p className="text-slate-400 text-base sm:text-lg">
+            <h3 className="text-3xl font-bold mb-4 text-brand-teal">Unser Ökosystem.</h3>
+            <p className="text-slate-400 text-lg">
               Vier spezialisierte Einheiten, eine Mission: Ihr Unternehmen digital nach vorne zu bringen. Wischen Sie, um Lösungen zu entdecken.
             </p>
             <div className="mt-8 flex items-center gap-2 text-brand-blue animate-pulse">
@@ -106,12 +106,12 @@ const HorizontalScroll: React.FC = () => {
                     </span>
                  </div>
                  
-                 <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-none transition-transform duration-500 group-hover:-translate-y-2 drop-shadow-lg">
+                 <h3 className="text-4xl md:text-6xl font-black text-white mb-6 leading-none transition-transform duration-500 group-hover:-translate-y-2 drop-shadow-lg">
                    {unit.name}
                  </h3>
                  
                  <div className="space-y-4 max-w-2xl transition-transform duration-500 group-hover:-translate-y-1">
-                   <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-white/90 group-hover:text-white transition-colors">
+                   <h4 className="text-xl md:text-2xl font-bold text-white/90 group-hover:text-white transition-colors">
                      "{unit.headline}"
                    </h4>
                    <p className="text-slate-300 text-base md:text-lg leading-relaxed border-l-2 border-brand-teal pl-4 group-hover:text-slate-100 transition-colors">
