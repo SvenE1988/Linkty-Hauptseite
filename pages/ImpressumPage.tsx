@@ -26,7 +26,7 @@ const ImpressumPage: React.FC = () => {
             <h2 className="text-2xl font-bold text-brand-navy mt-8 mb-4">Kontakt</h2>
             <p className="mb-4">
               Telefon: <a href="tel:+4972195279401" className="text-brand-teal hover:underline">+49 721 95279401</a><br />
-              E-Mail: <a href="mailto:info@linkty.de" className="text-brand-teal hover:underline">info@linkty.de</a>
+              E-Mail: <a href="mailto:info@linkty.ai" className="text-brand-teal hover:underline">info@linkty.ai</a>
             </p>
 
             <h2 className="text-2xl font-bold text-brand-navy mt-8 mb-4">
