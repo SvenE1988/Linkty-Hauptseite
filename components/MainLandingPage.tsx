@@ -11,7 +11,7 @@ const MainLandingPage: React.FC = () => {
         The main content wrapper.
         Relative z-10 ensures it scrolls OVER the fixed footer.
       */}
-      <main className="relative z-10 bg-brand-navy mb-[80vh] sm:mb-[70vh] md:mb-[60vh] shadow-2xl shadow-black/80">
+      <main className="relative z-10 bg-brand-navy mb-[60vh] shadow-2xl shadow-black/80">
         <Hero />
         <PinningSection />
         <HorizontalScroll />

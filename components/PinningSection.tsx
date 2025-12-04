@@ -32,10 +32,10 @@ const PinningSection: React.FC = () => {
 
   return (
     <section ref={containerRef} className="relative bg-brand-navy text-white">
-      <div className="relative flex flex-col xl:flex-row">
+      <div className="relative flex flex-col lg:flex-row">
         
         {/* Sticky Visual Container */}
-        <div className="xl:w-1/2 h-screen sticky top-0 flex items-center justify-center overflow-hidden bg-gradient-to-b from-brand-navy to-brand-surface xl:border-r border-white/5">
+        <div className="lg:w-1/2 h-screen sticky top-0 flex items-center justify-center overflow-hidden bg-gradient-to-b from-brand-navy to-brand-surface border-r border-white/5">
            
            {/* Abstract Connected Nodes Visualization */}
            <motion.div 
@@ -59,7 +59,7 @@ const PinningSection: React.FC = () => {
         </div>
 
         {/* Scrolling Text Content */}
-        <div className="xl:w-1/2 relative z-10 flex flex-col justify-center bg-brand-navy/50 backdrop-blur-sm">
+        <div className="lg:w-1/2 relative z-10 flex flex-col justify-center bg-brand-navy/50 backdrop-blur-sm">
            <div className="min-h-screen flex flex-col justify-center gap-60 py-40 px-8 md:px-20">
               {coreValues.map((value, index) => (
                 <FeatureBlock key={index} value={value} index={index} />

@@ -52,15 +52,15 @@ const VoicePlaceholder: React.FC = () => {
               Diese Dienstleistung ist bereits verfügbar
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black text-white mb-6 leading-tight">
+            <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
               Linkty Voice ist einsatzbereit – die Detailseite folgt in Kürze
             </h1>
 
-            <p className="text-xl sm:text-2xl md:text-3xl text-white font-bold mb-6 drop-shadow-lg">
+            <p className="text-2xl md:text-3xl text-white font-bold mb-6 drop-shadow-lg">
               Gehen Sie ran, auch wenn Sie nicht da sind.
             </p>
 
-            <p className="text-lg sm:text-xl text-gray-200 max-w-3xl mx-auto mb-12">
+            <p className="text-xl text-gray-200 max-w-3xl mx-auto mb-12">
               KI-gestützte Telefonie für 100% Erreichbarkeit – ohne Personalengpass.
             </p>
           </div>
@@ -69,18 +69,18 @@ const VoicePlaceholder: React.FC = () => {
         {/* Kombinierte Kachel: Einsatzbereit + Live-Test */}
         <section className="pb-8 px-4">
           <div className="max-w-5xl mx-auto">
-            <div className="bg-gradient-to-br from-voice-primary to-voice-accent text-white rounded-2xl p-6 sm:p-8 md:p-12 shadow-2xl">
+            <div className="bg-gradient-to-br from-voice-primary to-voice-accent text-white rounded-2xl p-8 md:p-12 shadow-2xl">
               <div className="flex items-center gap-3 mb-6">
-                <Phone className="w-6 h-6 sm:w-8 sm:h-8" />
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
+                <Phone className="w-8 h-8" />
+                <h2 className="text-3xl md:text-4xl font-bold">
                   Diese Dienstleistung ist schon heute für Sie einsatzbereit
                 </h2>
               </div>
 
               <div className="mt-8 bg-white/10 backdrop-blur-sm border border-white/30 rounded-xl p-6 text-center">
                 <div className="flex items-center justify-center gap-3 mb-3">
-                  <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                  <p className="text-lg sm:text-xl md:text-2xl font-bold text-white">
+                  <Phone className="w-6 h-6 text-white" />
+                  <p className="text-xl md:text-2xl font-bold text-white">
                     Live-Test verfügbar!
                   </p>
                 </div>
@@ -129,7 +129,7 @@ const VoicePlaceholder: React.FC = () => {
             {/* Features */}
             <div className="mb-12">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Was Linkty Voice für Sie leistet</h3>
-              <div className="grid sm:grid-cols-2 gap-4">
+              <div className="grid md:grid-cols-2 gap-4">
                 {[
                   '24/7 Anrufannahme ohne Personalkosten',
                   'Nahtlose Integration in Ihre bestehende Telefonanlage',
@@ -139,7 +139,7 @@ const VoicePlaceholder: React.FC = () => {
                   'Keine wichtige Anfrage geht mehr verloren'
                 ].map((feature, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-voice-accent flex-shrink-0 mt-1" />
+                    <CheckCircle2 className="w-6 h-6 text-voice-accent flex-shrink-0 mt-1" />
                     <span className="text-gray-700 text-lg">{feature}</span>
                   </div>
                 ))}
@@ -157,16 +157,16 @@ const VoicePlaceholder: React.FC = () => {
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col md:flex-row gap-4 justify-center">
               <button
                 onClick={() => setShowCalendar(true)}
-                className="w-full sm:w-auto px-6 sm:px-10 py-3 sm:py-4 min-h-[48px] bg-voice-primary text-white font-bold rounded-lg hover:bg-voice-accent transition-all shadow-lg transform hover:-translate-y-1"
+                className="px-10 py-4 bg-voice-primary text-white font-bold rounded-lg hover:bg-voice-accent transition-all shadow-lg transform hover:-translate-y-1"
               >
                 Jetzt unverbindliches Gespräch vereinbaren
               </button>
               <button
                 onClick={() => setShowCalendar(true)}
-                className="w-full sm:w-auto px-6 sm:px-10 py-3 sm:py-4 min-h-[48px] border-2 border-voice-primary text-voice-primary font-bold rounded-lg hover:bg-voice-accent/10 transition-all"
+                className="px-10 py-4 border-2 border-voice-primary text-voice-primary font-bold rounded-lg hover:bg-voice-accent/10 transition-all"
               >
                 Live-Demo anfragen
               </button>
