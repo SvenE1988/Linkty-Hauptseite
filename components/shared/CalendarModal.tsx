@@ -32,7 +32,7 @@ const CalendarModal: React.FC<CalendarModalProps> = ({ isOpen, onClose, iframeId
           <iframe
             src="https://link.linkty.ai/widget/booking/EAqjBUlT5vgXjUg1UxFG"
             style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '700px', height: '85vh' }}
-            scrolling="no"
+            scrolling="auto"
             id={iframeId}
             title="Linkty Demo Terminbuchung"
           />
