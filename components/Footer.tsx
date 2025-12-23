@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
               <iframe
                 src="https://link.linkty.ai/widget/booking/EAqjBUlT5vgXjUg1UxFG"
                 style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '700px', height: '85vh' }}
-                scrolling="no"
+                scrolling="auto"
                 id="EAqjBUlT5vgXjUg1UxFG_1764391826265"
               />
             </div>
