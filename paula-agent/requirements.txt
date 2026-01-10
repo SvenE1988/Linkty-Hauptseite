@@ -1,0 +1,11 @@
+livekit-agents
+livekit-plugins-bey
+livekit-plugins-google
+livekit-plugins-deepgram
+livekit-plugins-cartesia
+livekit-plugins-silero
+livekit-plugins-turn-detector
+livekit-plugins-noise-cancellation
+python-dotenv
+
+

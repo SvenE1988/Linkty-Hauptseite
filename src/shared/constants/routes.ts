@@ -2,6 +2,7 @@ export const ROUTES = {
   HOME: '/',
   IMPRESSUM: '/impressum',
   DATENSCHUTZ: '/datenschutz',
+  TEST_CHAT: '/test-chat',
 
   ENGAGE: {
     ROOT: '/engage',

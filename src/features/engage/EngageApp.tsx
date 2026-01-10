@@ -13,8 +13,8 @@ import { EngageDatenschutzPage } from '@/features/engage/pages/DatenschutzPage';
 
 export const EngageApp = () => {
   return (
-    <EngageLayout>
-      <Routes>
+    <Routes>
+      <Route element={<EngageLayout />}>
         <Route index element={<EngageLanding />} />
         <Route path="crm" element={<CRMPage />} />
         <Route path="kommunikation" element={<KommunikationPage />} />
@@ -25,7 +25,7 @@ export const EngageApp = () => {
         <Route path="ressourcen" element={<RessourcenPage />} />
         <Route path="impressum" element={<EngageImpressumPage />} />
         <Route path="datenschutz" element={<EngageDatenschutzPage />} />
-      </Routes>
-    </EngageLayout>
+      </Route>
+    </Routes>
   );
 };

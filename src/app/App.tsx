@@ -17,6 +17,9 @@ const ImpressumPage = lazy(() =>
 const DatenschutzPage = lazy(() =>
   import('@/features/legal/pages/DatenschutzPage').then((module) => ({ default: module.DatenschutzPage }))
 );
+const TestChatPage = lazy(() =>
+  import('@/features/test/TestChatPage').then((module) => ({ default: module.TestChatPage }))
+);
 
 export const App = () => {
   return (
@@ -30,6 +33,9 @@ export const App = () => {
           {/* Legal Pages */}
           <Route path={ROUTES.IMPRESSUM} element={<ImpressumPage />} />
           <Route path={ROUTES.DATENSCHUTZ} element={<DatenschutzPage />} />
+
+          {/* Test Page */}
+          <Route path={ROUTES.TEST_CHAT} element={<TestChatPage />} />
 
           {/* Engage Sub-App */}
           <Route path={`${ROUTES.ENGAGE.ROOT}/*`} element={<EngageApp />} />
