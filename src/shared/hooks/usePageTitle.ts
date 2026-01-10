@@ -1,12 +1,8 @@
-import { useEffect } from 'react';
+import { useMetaData } from './useMetaData';
 
+/**
+ * @deprecated Use useMetaData for better SEO control (Title + Description)
+ */
 export const usePageTitle = (title: string) => {
-  useEffect(() => {
-    const previousTitle = document.title;
-    document.title = title;
-
-    return () => {
-      document.title = previousTitle;
-    };
-  }, [title]);
+  useMetaData({ title });
 };

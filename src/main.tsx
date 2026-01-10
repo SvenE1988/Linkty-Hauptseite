@@ -1,19 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { AppProvider } from '@/app/providers/AppProvider';
+import { App } from '@/app/App';
 import '@/styles/globals.css';
 
-// Temporär: Import aus alter Struktur bis Migration abgeschlossen
-// TODO: Nach Phase 2 ändern zu: import { App } from '@/app/App';
-import App from '../App';
+// Fonts (DSGVO compliant - local hosting)
+import '@fontsource/inter/300.css';
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/600.css';
+import '@fontsource/inter/800.css';
+import '@fontsource/playfair-display/400.css';
+import '@fontsource/playfair-display/600.css';
+import '@fontsource/playfair-display/700.css';
+import '@fontsource/playfair-display/800.css';
 
 const rootElement = document.getElementById('root');
+
 if (!rootElement) {
-  throw new Error('Could not find root element to mount to');
+  throw new Error('Root element not found');
 }
 
-const root = ReactDOM.createRoot(rootElement);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+createRoot(rootElement).render(
+  <StrictMode>
+    <AppProvider>
+      <App />
+    </AppProvider>
+  </StrictMode>
 );
