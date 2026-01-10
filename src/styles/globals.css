@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fonts */
+  --font-sans: 'Inter', sans-serif;
+  --font-playfair: 'Playfair Display', serif;
+
+  /* Brand Colors */
+  --color-brand-teal: #2DD4BF;
+  --color-brand-blue: #3B82F6;
+  --color-brand-navy: #0F172A;
+  --color-brand-surface: #1E293B;
+
+  /* Engage Colors */
+  --color-engage-primary: #023059;
+  --color-engage-secondary: #3973bf;
+  --color-engage-teal: #76d9bd;
+  --color-engage-accent: #00a8a8;
+  --color-engage-surface: #F8F9FB;
+
+  /* Voice Colors */
+  --color-voice-primary: #2C7A6B;
+  --color-voice-accent: #6DBBAA;
+
+  /* Studio Colors */
+  --color-studio-primary: #4a7c8a;
+  --color-studio-accent: #b1d4e0;
+
+  /* Solutions Colors */
+  --color-solutions-primary: #0E5C7A;
+  --color-solutions-accent: #4FA5C7;
+}
+
+/* Custom utilities */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Accessibility: Keyboard Focus Styles (WCAG 2.1 AA Compliance) */
+*:focus-visible {
+  outline: 3px solid var(--color-brand-teal);
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible,
+[role='button']:focus-visible {
+  outline: 3px solid var(--color-brand-teal);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(45, 212, 191, 0.2);
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-brand-teal);
+  outline-offset: 0px;
+  box-shadow: 0 0 0 4px rgba(45, 212, 191, 0.15);
+}
