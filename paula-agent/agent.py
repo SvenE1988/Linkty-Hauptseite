@@ -41,11 +41,9 @@ class PaulaAgent(Agent):
 
     async def on_enter(self):
         logger.info("👋 Agent entered conversation context.")
-        # Begrüßung generieren, sobald der Agent bereit ist
-        await self.session.generate_reply(
-            instructions="Begrüße den Nutzer freundlich auf Deutsch und frage, wie du helfen kannst.",
-            allow_interruptions=True,
-        )
+        # Keine automatische Begrüßung mehr in der Pre-Interaction-Phase.
+        # Der Agent wartet visuell anwesend auf Input des Nutzers.
+        pass
 
 server = AgentServer()
 
