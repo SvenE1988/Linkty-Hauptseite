@@ -1,8 +1,15 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
+interface CoreValue {
+  kicker: string;
+  title: string;
+  description: string;
+  color: string;
+}
+
 // This section serves as the "Hub" logic: Problem -> Solution mechanics
-const coreValues = [
+const coreValues: CoreValue[] = [
   {
     kicker: "Die Herausforderung",
     title: "Daten ohne Strategie",
@@ -71,7 +78,12 @@ const PinningSection: React.FC = () => {
   );
 };
 
-const FeatureBlock: React.FC<{ value: any; index: number }> = ({ value, index }) => {
+interface FeatureBlockProps {
+  value: CoreValue;
+  index: number;
+}
+
+const FeatureBlock: React.FC<FeatureBlockProps> = ({ value }) => {
   return (
     <motion.div 
       initial={{ opacity: 0, x: 50 }}

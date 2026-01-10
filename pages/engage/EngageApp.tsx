@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import EngageLayout from '../../components/engage/EngageLayout';
+import LoadingSpinner from '../../components/shared/LoadingSpinner';
 
 const EngageLanding = lazy(() => import('./EngageLanding'));
 const CRMPage = lazy(() => import('./CRMPage'));
@@ -13,18 +14,9 @@ const RessourcenPage = lazy(() => import('./RessourcenPage'));
 const ImpressumPage = lazy(() => import('./ImpressumPage'));
 const DatenschutzPage = lazy(() => import('./DatenschutzPage'));
 
-const LoadingFallback = () => (
-  <div className="min-h-screen flex items-center justify-center bg-white">
-    <div className="text-center">
-      <div className="w-16 h-16 border-4 border-engage-teal border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-      <p className="text-engage-primary font-semibold">Lädt...</p>
-    </div>
-  </div>
-);
-
 const EngageApp: React.FC = () => {
   return (
-    <Suspense fallback={<LoadingFallback />}>
+    <Suspense fallback={<LoadingSpinner variant="white" />}>
       <Routes>
         <Route path="/" element={<EngageLayout />}>
           <Route index element={<EngageLanding />} />

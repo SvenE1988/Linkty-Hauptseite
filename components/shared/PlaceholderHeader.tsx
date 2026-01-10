@@ -5,25 +5,21 @@ interface PlaceholderHeaderProps {
   logoSrc: string;
   logoAlt: string;
   onDemoClick: () => void;
-  primaryColor?: string;
+  /** Use full Tailwind class like 'bg-blue-600' */
+  buttonClassName?: string;
 }
 
 const PlaceholderHeader: React.FC<PlaceholderHeaderProps> = ({
   logoSrc,
   logoAlt,
   onDemoClick,
-  primaryColor = 'blue-600'
+  buttonClassName = 'bg-blue-600',
 }) => {
   return (
     <header className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md shadow-sm z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3" aria-label="Zurück zur Startseite">
-          <img
-            src={logoSrc}
-            alt={logoAlt}
-            className="h-10"
-            loading="eager"
-          />
+          <img src={logoSrc} alt={logoAlt} className="h-10" loading="eager" />
         </Link>
         <div className="flex items-center gap-4">
           <a
@@ -36,7 +32,7 @@ const PlaceholderHeader: React.FC<PlaceholderHeaderProps> = ({
           </a>
           <button
             onClick={onDemoClick}
-            className={`px-6 py-2 bg-${primaryColor} text-white font-semibold rounded-lg hover:opacity-90 transition-all shadow-md hover:shadow-lg min-h-[44px]`}
+            className={`px-6 py-2 ${buttonClassName} text-white font-semibold rounded-lg hover:opacity-90 transition-all shadow-md hover:shadow-lg min-h-[44px]`}
             aria-label="Demo-Termin buchen"
           >
             Demo buchen

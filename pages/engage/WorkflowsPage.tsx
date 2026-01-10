@@ -1,6 +1,9 @@
 import React from 'react';
+import { usePageTitle } from '../../hooks/usePageTitle';
 
 const WorkflowsPage: React.FC = () => {
+  usePageTitle('Workflows & Automation - Linkty | Engage');
+
   return (
     <div>
       <section className="py-20 bg-gradient-to-br from-engage-secondary to-engage-primary text-white">

@@ -60,15 +60,16 @@ const Hero: React.FC = () => {
           </p>
         </motion.div>
         
-        <motion.div
+        <motion.button
+            type="button"
+            onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}
             style={{ opacity: useTransform(scrollYProgress, [0, 0.1], [1, 0]) }}
-            className="absolute bottom-12 left-1/2 -translate-x-1/2 text-white/50 text-sm animate-bounce flex flex-col items-center gap-2"
-            role="button"
+            className="absolute bottom-12 left-1/2 -translate-x-1/2 text-white/50 text-sm animate-bounce flex flex-col items-center gap-2 cursor-pointer bg-transparent border-none focus:outline-none focus:ring-2 focus:ring-brand-teal focus:ring-offset-2 focus:ring-offset-brand-navy rounded-lg p-2"
             aria-label="Nach unten scrollen um mehr zu erfahren"
         >
             <span className="uppercase tracking-widest text-xs">Starten Sie hier</span>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
-        </motion.div>
+        </motion.button>
       </div>
     </div>
   );
