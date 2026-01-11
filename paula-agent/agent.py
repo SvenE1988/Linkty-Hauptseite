@@ -88,11 +88,6 @@ async def entrypoint(ctx: JobContext):
         avatar_id="694c83e2-8895-4a98-bd16-56332ca3f449"
     )
     
-    # Video-Stream im Raum starten
-    logger.info("▶️ Starting Avatar stream...")
-    await avatar.start(ctx.room)
-    logger.info("✅ Avatar stream started.")
-
     # Agenten-Logik starten
     logger.info("🤖 Starting Agent logic...")
     await session.start(
@@ -100,13 +95,23 @@ async def entrypoint(ctx: JobContext):
         room=ctx.room,
         room_options=room_io.RoomOptions(
             audio_input=room_io.AudioInputOptions(
-                noise_cancellation=lambda params: noise_cancellation.BVCTelephony() 
-                if params.participant.kind == rtc.ParticipantKind.PARTICIPANT_KIND_SIP 
+                noise_cancellation=lambda params: noise_cancellation.BVCTelephony()
+                if params.participant.kind == rtc.ParticipantKind.PARTICIPANT_KIND_SIP
                 else noise_cancellation.BVC(),
             ),
         ),
     )
 
+    # Video-Stream im Raum starten
+    # WICHTIG: session muss an avatar.start übergeben werden, damit Lippen-Sync funktioniert
+    logger.info("▶️ Starting Avatar stream...")
+    await avatar.start(session, room=ctx.room)
+    logger.info("✅ Avatar stream started.")
+
 if __name__ == "__main__":
     # cli.run_app sorgt dafür, dass Befehle wie 'start' und 'download-files' funktionieren
+    # Für den manuellen "dev" Modus (ohne Dispatcher) müssen Argumente überschrieben werden,
+    # wenn sie nicht via CLI kommen. Im Dockerfile nutzen wir aber CMD ["python", "agent.py", "dev", ...],
+    # daher reicht cli.run_app(server) normalerweise aus.
+    # WICHTIG: Um den Worker-Modus zu nutzen (für Cloud Dispatch), muss 'start' übergeben werden.
     cli.run_app(server)

@@ -19,6 +19,5 @@ COPY . .
 # 3. KI-Modelle vorab laden (verhindert Download-Fehler zur Laufzeit)
 RUN python agent.py download-files
 
-# Startbefehl: Zurück zum Worker-Modus.
-# Die Metadaten im Token-Service ("agent: true") sollten den Dispatch auslösen.
-CMD ["python", "agent.py", "start"]
+# Startbefehl: Dev-Modus, um sich proaktiv mit dem Raum zu verbinden (bypassed Dispatching).
+CMD ["python", "agent.py", "dev", "--room", "paula-demo"]

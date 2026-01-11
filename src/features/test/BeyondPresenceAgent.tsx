@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import {
   LiveKitRoom,
-  ParticipantTile,
-  useParticipants,
+  VideoTrack,
   RoomAudioRenderer,
+  useConnectionState,
+  useVoiceAssistant, // NEU: Der spezielle Hook für Avatar-Agents!
 } from '@livekit/components-react';
+import { RoomEvent } from 'livekit-client';
 import '@livekit/components-styles';
 
 /**
@@ -66,58 +68,71 @@ export const BeyondPresenceAgent: React.FC = () => {
         connect={true}
         data-lk-theme="default"
         style={{ height: '100%' }}
+        onConnected={() => console.log('✅ Connected to LiveKit Room')}
+        onDisconnected={() => console.log('❌ Disconnected from LiveKit Room')}
+        onError={(err) => console.error('⚠️ LiveKit Room Error:', err)}
       >
         <AgentLayout />
         
         {/* Overlay-Button, wenn Audio noch nicht aktiv ist */}
         {!isAudioEnabled && (
-          <div className="absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-sm z-20 transition-all group-hover:bg-black/40">
-            <button 
+          <div className="absolute inset-0 flex items-center justify-center bg-transparent z-20">
+            <button
               onClick={() => setIsAudioEnabled(true)}
-              className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full shadow-lg transition-all transform hover:scale-105 flex items-center gap-3"
+              className="px-8 py-4 bg-white/90 hover:bg-white text-gray-900 font-bold rounded-full shadow-xl transition-all transform hover:scale-105 flex items-center gap-3 backdrop-blur-md border border-white/50"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-600">
                 <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
                 <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
                 <line x1="12" x2="12" y1="19" y2="22"/>
               </svg>
-              Paula antworten
+              Gespräch starten
             </button>
           </div>
         )}
 
-        <RoomAudioRenderer />
+        {/* Audio-Renderer nur wenn aktiviert */}
+        {isAudioEnabled && <RoomAudioRenderer />}
       </LiveKitRoom>
     </div>
   );
 };
 
 /**
- * Custom Layout für den Agenten
- * Sucht gezielt nach dem Teilnehmer mit Video-Track (Avatar).
+ * Avatar Layout - nutzt useVoiceAssistant Hook
+ * Dieser Hook kennt die Avatar-Worker-Logik von Beyond Presence!
  */
 const AgentLayout: React.FC = () => {
-  const participants = useParticipants();
+  const connectionState = useConnectionState();
   const [showHelp, setShowHelp] = useState(false);
-  
-  // Debug-Logging und Timer für Hilfe
-  useEffect(() => {
-    console.log('Teilnehmer im Raum:', participants.map(p => ({
-      identity: p.identity,
-      isLocal: p.isLocal,
-      trackCount: p.trackPublications.size
-    })));
 
+  // 🎯 DER GAME-CHANGER: useVoiceAssistant Hook!
+  // Dieser Hook holt automatisch die richtigen Tracks vom Avatar-Worker
+  const { agent, audioTrack, videoTrack } = useVoiceAssistant();
+
+  // Debug-Logging
+  useEffect(() => {
+    console.log('🎬 Voice Assistant State:', {
+      hasAgent: !!agent,
+      hasAudioTrack: !!audioTrack,
+      hasVideoTrack: !!videoTrack,
+      agentIdentity: agent?.identity,
+      connectionState
+    });
+  }, [agent, audioTrack, videoTrack, connectionState]);
+
+  // Timer für Hilfe-Meldung
+  useEffect(() => {
     const timer = setTimeout(() => {
-      if (participants.length <= 1) setShowHelp(true);
+      if (!videoTrack) {
+        setShowHelp(true);
+      }
     }, 10000);
     return () => clearTimeout(timer);
-  }, [participants]);
+  }, [videoTrack]);
 
-  // Wir suchen den ersten anderen Teilnehmer (das ist meistens der Agent)
-  const avatarParticipant = participants.find(p => !p.isLocal);
-  
-  if (!avatarParticipant) {
+  // Warte auf Video-Track vom Avatar-Worker
+  if (!videoTrack) {
     return (
       <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-900 p-6 text-center">
         <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mb-4"></div>
@@ -125,7 +140,10 @@ const AgentLayout: React.FC = () => {
         {showHelp && (
           <div className="mt-4 p-4 bg-yellow-900/30 border border-yellow-700/50 rounded-xl max-w-xs transition-opacity animate-in fade-in">
             <p className="text-yellow-200 text-xs">
-              Paula tritt dem Raum nicht bei. Stelle sicher, dass der Python-Agent läuft (`python agent.py dev`) und mit der gleichen LiveKit-URL verbunden ist.
+              Paula tritt dem Raum nicht bei. Stelle sicher, dass:
+              <br/>• Der Python-Agent läuft (`python main.py`)
+              <br/>• Beyond Presence API Key korrekt ist
+              <br/>• LiveKit-URL öffentlich erreichbar ist
             </p>
           </div>
         )}
@@ -135,10 +153,11 @@ const AgentLayout: React.FC = () => {
 
   return (
     <div className="relative h-full w-full bg-black">
-      <ParticipantTile
-        participant={avatarParticipant}
-        className="agent-tile border-none"
-        style={{ height: '100%', width: '100%', objectFit: 'cover' }}
+      {/* VideoTrack mit dem Track vom Avatar-Worker */}
+      <VideoTrack
+        trackRef={videoTrack}
+        className="h-full w-full"
+        style={{ objectFit: 'cover' }}
       />
       
       {/* Overlay für Status */}
@@ -148,6 +167,17 @@ const AgentLayout: React.FC = () => {
             <span className="text-white text-xs font-semibold uppercase tracking-wider">Live</span>
         </div>
       </div>
+
+      {/* Optional: Agent Identity anzeigen (Debug) */}
+      {agent && (
+        <div className="absolute bottom-4 left-4 z-10">
+          <div className="bg-black/60 backdrop-blur-md px-3 py-1 rounded-lg border border-white/10">
+            <span className="text-white text-xs opacity-75">
+              Agent: {agent.identity}
+            </span>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
